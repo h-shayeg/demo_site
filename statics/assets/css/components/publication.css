@@ -1,0 +1,67 @@
+/* ==========================================================================
+   PUBLICATION
+   Reused on both Research and About — build once, cite everywhere.
+   ========================================================================== */
+
+.publication-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.publication-item {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-2);
+  padding-block: var(--space-6);
+  border-top: 1px solid var(--color-border);
+  transition: opacity var(--transition-slow) var(--ease-out), transform var(--transition-slow) var(--ease-out);
+}
+
+.publication-item:first-child {
+  border-top: none;
+  padding-top: 0;
+}
+
+@media (min-width: 640px) {
+  .publication-item {
+    grid-template-columns: 72px 1fr;
+    gap: var(--space-5);
+  }
+}
+
+.publication-item__year {
+  font-size: var(--text-sm);
+  font-weight: var(--weight-semibold);
+  color: var(--color-text-tertiary);
+}
+
+.publication-item__title {
+  font-size: var(--text-lg);
+  font-weight: var(--weight-semibold);
+  color: var(--color-text-primary);
+  line-height: var(--leading-snug);
+}
+
+.publication-item__meta {
+  margin-top: var(--space-2);
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+}
+
+.publication-item__venue {
+  font-style: italic;
+}
+
+.publication-item__footer {
+  margin-top: var(--space-3);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.publication-item__link {
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  color: var(--color-blue);
+}

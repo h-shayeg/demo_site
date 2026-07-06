@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MolGraphNet — Kian Rostami</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%278%27 fill=%27%230F172A%27/%3E%3Ccircle cx=%2716%27 cy=%2716%27 r=%276%27 fill=%27%232563EB%27/%3E%3C/svg%3E">
+  <meta name="description" content="MolGraphNet is an open-source graph neural network library for molecular property prediction, built on PyTorch Geometric.">
+
+  <meta property="og:title" content="MolGraphNet — Kian Rostami">
+  <meta property="og:description" content="An open-source graph neural network library for molecular property prediction.">
+  <meta property="og:type" content="article">
+  <meta name="robots" content="index, follow">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Vazirmatn:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../assets/css/tokens.css">
+  <link rel="stylesheet" href="../assets/css/base.css">
+  <link rel="stylesheet" href="../assets/css/typography.css">
+  <link rel="stylesheet" href="../assets/css/layout.css">
+  <link rel="stylesheet" href="../assets/css/components/button.css">
+  <link rel="stylesheet" href="../assets/css/components/badge.css">
+  <link rel="stylesheet" href="../assets/css/components/nav.css">
+  <link rel="stylesheet" href="../assets/css/components/footer.css">
+  <link rel="stylesheet" href="../assets/css/components/glass.css">
+  <link rel="stylesheet" href="../assets/css/components/surface.css">
+  <link rel="stylesheet" href="../assets/css/components/page-header.css">
+  <link rel="stylesheet" href="../assets/css/components/breadcrumb.css">
+  <link rel="stylesheet" href="../assets/css/components/code.css">
+  <link rel="stylesheet" href="../assets/css/components/toc.css">
+  <link rel="stylesheet" href="../assets/css/components/article.css">
+  <link rel="stylesheet" href="../assets/css/components/hero.css">
+  <link rel="stylesheet" href="../assets/css/components/card.css">
+  <link rel="stylesheet" href="../assets/css/components/research-area.css">
+  <link rel="stylesheet" href="../assets/css/components/publication.css">
+  <link rel="stylesheet" href="../assets/css/components/credential.css">
+  <link rel="stylesheet" href="../assets/css/components/timeline.css">
+  <link rel="stylesheet" href="../assets/css/components/skills.css">
+  <link rel="stylesheet" href="../assets/css/components/form.css">
+  <link rel="stylesheet" href="../assets/css/components/filter.css">
+  <link rel="stylesheet" href="../assets/css/components/cta.css">
+  <link rel="stylesheet" href="../assets/css/utilities.css">
+  <link rel="stylesheet" href="../assets/css/motion.css">
+</head>
+<body>
+
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <!-- ============================== HEADER ============================== -->
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a href="../index.html" class="brand">
+        <span class="brand__name">Kian Rostami</span>
+        <span class="brand__role">Computational Chemistry &amp; ML</span>
+      </a>
+
+      <nav class="nav-primary" aria-label="Primary">
+        <a class="nav-primary__link" href="../research.html">Research</a>
+        <a class="nav-primary__link" href="../projects.html" aria-current="page">Projects</a>
+        <a class="nav-primary__link" href="../blog.html">Blog</a>
+        <a class="nav-primary__link" href="../about.html">About</a>
+        <a class="nav-primary__link" href="../contact.html">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="../login.html" class="btn btn--ghost hide-mobile">Sign in</a>
+        <a href="../contact.html" class="btn btn--primary hide-mobile">Get in Touch</a>
+        <button type="button" class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <nav id="mobile-nav" class="nav-mobile" aria-label="Mobile">
+    <a class="nav-mobile__link" href="../research.html">Research</a>
+    <a class="nav-mobile__link" href="../projects.html" aria-current="page">Projects</a>
+    <a class="nav-mobile__link" href="../blog.html">Blog</a>
+    <a class="nav-mobile__link" href="../about.html">About</a>
+    <a class="nav-mobile__link" href="../contact.html">Contact</a>
+    <div class="nav-mobile__actions">
+      <a href="../login.html" class="btn btn--secondary btn--full">Sign in</a>
+      <a href="../contact.html" class="btn btn--primary btn--full">Get in Touch</a>
+    </div>
+  </nav>
+
+  <main id="main-content">
+
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../projects.html">Projects</a>
+        <span aria-hidden="true">/</span>
+        <span class="breadcrumb__current">MolGraphNet</span>
+      </nav>
+
+      <!-- ============================== PAGE HEADER ============================== -->
+      <div class="page-header">
+        <p class="eyebrow eyebrow--purple">Featured Project</p>
+        <h1 class="page-header__title">MolGraphNet</h1>
+        <p class="lead page-header__lead">An open-source graph neural network library for molecular property prediction, built on PyTorch Geometric.</p>
+
+        <div class="badge-row badge-row--below-desc">
+          <span class="badge badge--purple">Machine Learning</span>
+          <span class="badge badge--green">Chemistry</span>
+          <span class="badge badge--neutral">Open Source</span>
+          <span class="badge badge--neutral">MIT License</span>
+        </div>
+
+        <div class="hero__actions">
+          <a href="https://github.com" class="btn btn--primary" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+          <a href="#" class="btn btn--secondary">Read Documentation</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============================== OVERVIEW / PROBLEM / APPROACH ============================== -->
+    <section class="section" aria-labelledby="overview-title">
+      <div class="container">
+        <div class="content-column stack stack--gap-lg">
+
+          <div>
+            <p class="eyebrow">Overview</p>
+            <h2 id="overview-title" class="section-header__title">Overview</h2>
+            <p>MolGraphNet is an open-source Python library for predicting molecular properties directly from chemical structure, using graph neural networks built on PyTorch Geometric. It started as infrastructure for my PhD research and is now used as a baseline in several published benchmarks and by a handful of academic labs for their own screening pipelines.</p>
+          </div>
+
+          <div>
+            <p class="eyebrow eyebrow--green">The Problem</p>
+            <h2 class="section-header__title">Fingerprints throw away structure</h2>
+            <p>Traditional QSAR models represent molecules as fixed-length descriptor vectors — counts of functional groups, computed physicochemical properties, topological indices. That representation is easy to feed into a random forest, but it discards the graph structure that actually determines how a molecule behaves. Models trained this way tend to memorize the chemical space they were trained on rather than learning transferable structure-property relationships, and their performance collapses on scaffolds the model hasn't seen before — which is precisely the setting that matters in real discovery workflows.</p>
+          </div>
+
+          <div>
+            <p class="eyebrow eyebrow--purple">The Approach</p>
+            <h2 class="section-header__title">Learning directly from the molecular graph</h2>
+            <p>MolGraphNet represents each molecule as a graph — atoms as nodes with learned embeddings, bonds as edges — and uses message-passing neural network layers to learn representations directly from that structure. The library supports several backbone variants (GCN, GAT, and a custom directed message-passing network described in the accompanying paper), a unified training and evaluation harness, and built-in scaffold-split cross-validation — the evaluation protocol most benchmark papers skip, and the one most models quietly fail once you add it back.</p>
+
+            <div class="code-block">
+              <div class="code-block__header">
+                <span>Quick Start</span>
+                <span>Python</span>
+              </div>
+              <pre><code>pip install molgraphnet
+
+from molgraphnet import MolGraphNet, load_dataset
+
+dataset = load_dataset("esol", split="scaffold")
+model = MolGraphNet(task="regression", backbone="gat")
+model.fit(dataset.train)
+
+predictions = model.predict(dataset.test.smiles)</code></pre>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== RESULTS ============================== -->
+    <section class="section section--alt" aria-labelledby="results-title">
+      <div class="container">
+        <div class="section-header">
+          <p class="eyebrow">Results</p>
+          <h2 id="results-title" class="section-header__title">Benchmark performance</h2>
+          <p class="lead section-header__lead">On the ESOL aqueous solubility benchmark under scaffold splitting — the harder, more realistic evaluation setting — MolGraphNet's default GAT backbone outperforms both a classical baseline and a standard GNN baseline.</p>
+        </div>
+
+        <div class="grid grid--3">
+          <div class="card">
+            <p class="result-stat__value">18%</p>
+            <p class="result-stat__label">Lower RMSE vs. Random Forest on Morgan fingerprints</p>
+          </div>
+          <div class="card">
+            <p class="result-stat__value">9%</p>
+            <p class="result-stat__label">Lower RMSE vs. a standard GCN baseline</p>
+          </div>
+          <div class="card">
+            <p class="result-stat__value">6</p>
+            <p class="result-stat__label">Public benchmark datasets supported out of the box</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== STACK + RELATED ============================== -->
+    <section class="section" aria-labelledby="stack-title">
+      <div class="container">
+        <div class="grid grid--2 grid--top grid--gap-lg">
+          <div>
+            <p class="eyebrow">Stack</p>
+            <h2 id="stack-title" class="section-header__title">Built with</h2>
+            <dl class="featured-project__stack">
+              <div class="featured-project__stack-item">
+                <dt>Core</dt><dd>Python, PyTorch Geometric</dd>
+              </div>
+              <div class="featured-project__stack-item">
+                <dt>Chemistry</dt><dd>RDKit</dd>
+              </div>
+              <div class="featured-project__stack-item">
+                <dt>Testing</dt><dd>pytest, GitHub Actions</dd>
+              </div>
+              <div class="featured-project__stack-item">
+                <dt>Docs</dt><dd>Read the Docs</dd>
+              </div>
+              <div class="featured-project__stack-item">
+                <dt>License</dt><dd>MIT</dd>
+              </div>
+            </dl>
+          </div>
+
+          <div>
+            <p class="eyebrow eyebrow--green">Related</p>
+            <h2 class="section-header__title">Research &amp; publications</h2>
+            <div class="stack">
+              <a class="research-area__related-link" href="../research.html#areas-title">
+                Molecular Property Prediction (research area)
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </a>
+              <a class="research-area__related-link" href="../research.html#publications">
+                Graph Neural Networks for Predicting Reaction Yields (2025)
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </a>
+              <a class="research-area__related-link" href="../research.html#publications">
+                Benchmarking GNN Architectures for Property Prediction (2023)
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== MORE PROJECTS ============================== -->
+    <section class="section section--alt" aria-labelledby="more-projects-title">
+      <div class="container">
+        <div class="section-header">
+          <p class="eyebrow">More Projects</p>
+          <h2 id="more-projects-title" class="section-header__title">Continue exploring</h2>
+        </div>
+
+        <div class="grid grid--3">
+          <article class="card">
+            <div class="badge-row badge-row--card-top">
+              <span class="badge badge--blue">Software Engineering</span>
+              <span class="badge badge--green">Chemistry</span>
+            </div>
+            <h3 class="card__title">ChemPipe</h3>
+            <p class="card__body">A reproducible workflow framework for high-throughput computational chemistry screening.</p>
+            <div class="card__footer">
+              <a href="chempipe.html" class="card__link">View project
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="badge-row badge-row--card-top">
+              <span class="badge badge--purple">Machine Learning</span>
+              <span class="badge badge--green">Chemistry</span>
+            </div>
+            <h3 class="card__title">LatentMol</h3>
+            <p class="card__body">A generative model for de novo molecule generation with property-conditioned latent search.</p>
+            <div class="card__footer">
+              <a href="latentmol.html" class="card__link">View project
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="badge-row badge-row--card-top">
+              <span class="badge badge--purple">Machine Learning</span>
+              <span class="badge badge--green">Chemistry</span>
+            </div>
+            <h3 class="card__title">SpectraID</h3>
+            <p class="card__body">A transformer-based model for compound identification from mass spectrometry data.</p>
+            <div class="card__footer">
+              <a href="spectraid.html" class="card__link">View project
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== CONTACT CTA (plain) ============================== -->
+    <section class="section" aria-labelledby="contact-cta-title">
+      <div class="container">
+        <div class="panel cta-block">
+          <div>
+            <p class="eyebrow eyebrow--green">Get in Touch</p>
+            <h2 id="contact-cta-title" class="cta-block__title">Using MolGraphNet in your own research?</h2>
+            <p class="cta-block__desc">I'd like to hear about it — and I'm glad to help with issues, feature requests, or citation questions.</p>
+          </div>
+
+          <div class="cta-block__actions">
+            <a href="../contact.html" class="btn btn--primary">Contact Me</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================== FOOTER ============================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <p class="footer-brand__name">Kian Rostami</p>
+          <p class="footer-brand__desc">Research scientist working across computational chemistry, machine learning, and open-source scientific software.</p>
+        </div>
+
+        <div>
+          <p class="footer-col__title">Navigate</p>
+          <div class="footer-col__list">
+            <a href="../research.html">Research</a>
+            <a href="../projects.html">Projects</a>
+            <a href="../blog.html">Blog</a>
+            <a href="../about.html">About</a>
+            <a href="../contact.html">Contact</a>
+          </div>
+        </div>
+
+        <div>
+          <p class="footer-col__title">Connect</p>
+          <div class="footer-col__list">
+            <a href="mailto:kian@example.com">Email</a>
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="https://scholar.google.com" target="_blank" rel="noopener noreferrer">Google Scholar</a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="https://orcid.org" target="_blank" rel="noopener noreferrer">ORCID</a>
+          </div>
+        </div>
+
+        <div>
+          <p class="footer-col__title">Account</p>
+          <div class="footer-col__list">
+            <a href="../login.html">Sign In</a>
+            <a href="../register.html">Register</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© <span data-current-year>2026</span> Kian Rostami. All rights reserved.</p>
+        <p>Built with HTML, CSS &amp; JavaScript.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../assets/js/nav.js"></script>
+  <script src="../assets/js/forms.js"></script>
+  <script src="../assets/js/motion.js"></script>
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

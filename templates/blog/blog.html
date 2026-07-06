@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog — Kian Rostami</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%278%27 fill=%27%230F172A%27/%3E%3Ccircle cx=%2716%27 cy=%2716%27 r=%276%27 fill=%27%232563EB%27/%3E%3C/svg%3E">
+  <meta name="description" content="Notes on machine learning, computational chemistry, and research software engineering, by Kian Rostami.">
+  <meta property="og:title" content="Blog — Kian Rostami">
+  <meta property="og:description" content="Notes on machine learning, computational chemistry, and research software engineering.">
+  <meta property="og:type" content="website">
+  <meta name="robots" content="index, follow">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Vazirmatn:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/typography.css">
+  <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="assets/css/components/button.css">
+  <link rel="stylesheet" href="assets/css/components/badge.css">
+  <link rel="stylesheet" href="assets/css/components/nav.css">
+  <link rel="stylesheet" href="assets/css/components/footer.css">
+  <link rel="stylesheet" href="assets/css/components/glass.css">
+  <link rel="stylesheet" href="assets/css/components/surface.css">
+  <link rel="stylesheet" href="assets/css/components/page-header.css">
+  <link rel="stylesheet" href="assets/css/components/breadcrumb.css">
+  <link rel="stylesheet" href="assets/css/components/code.css">
+  <link rel="stylesheet" href="assets/css/components/toc.css">
+  <link rel="stylesheet" href="assets/css/components/article.css">
+  <link rel="stylesheet" href="assets/css/components/hero.css">
+  <link rel="stylesheet" href="assets/css/components/card.css">
+  <link rel="stylesheet" href="assets/css/components/research-area.css">
+  <link rel="stylesheet" href="assets/css/components/publication.css">
+  <link rel="stylesheet" href="assets/css/components/credential.css">
+  <link rel="stylesheet" href="assets/css/components/timeline.css">
+  <link rel="stylesheet" href="assets/css/components/skills.css">
+  <link rel="stylesheet" href="assets/css/components/form.css">
+  <link rel="stylesheet" href="assets/css/components/filter.css">
+  <link rel="stylesheet" href="assets/css/components/cta.css">
+  <link rel="stylesheet" href="assets/css/utilities.css">
+  <link rel="stylesheet" href="assets/css/motion.css">
+</head>
+<body>
+
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a href="index.html" class="brand">
+        <span class="brand__name">Kian Rostami</span>
+        <span class="brand__role">Computational Chemistry &amp; ML</span>
+      </a>
+      <nav class="nav-primary" aria-label="Primary">
+        <a class="nav-primary__link" href="research.html">Research</a>
+        <a class="nav-primary__link" href="projects.html">Projects</a>
+        <a class="nav-primary__link" href="blog.html" aria-current="page">Blog</a>
+        <a class="nav-primary__link" href="about.html">About</a>
+        <a class="nav-primary__link" href="contact.html">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <a href="login.html" class="btn btn--ghost hide-mobile">Sign in</a>
+        <a href="contact.html" class="btn btn--primary hide-mobile">Get in Touch</a>
+        <button type="button" class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <nav id="mobile-nav" class="nav-mobile" aria-label="Mobile">
+    <a class="nav-mobile__link" href="research.html">Research</a>
+    <a class="nav-mobile__link" href="projects.html">Projects</a>
+    <a class="nav-mobile__link" href="blog.html" aria-current="page">Blog</a>
+    <a class="nav-mobile__link" href="about.html">About</a>
+    <a class="nav-mobile__link" href="contact.html">Contact</a>
+    <div class="nav-mobile__actions">
+      <a href="login.html" class="btn btn--secondary btn--full">Sign in</a>
+      <a href="contact.html" class="btn btn--primary btn--full">Get in Touch</a>
+    </div>
+  </nav>
+
+  <main id="main-content">
+
+    <div class="container">
+      <div class="page-header">
+        <p class="eyebrow">Blog</p>
+        <h1 class="page-header__title">Blog</h1>
+        <p class="lead page-header__lead">Notes on machine learning, computational chemistry, and the research software engineering that connects them.</p>
+      </div>
+    </div>
+
+    <section class="section" aria-labelledby="articles-title">
+      <div class="container">
+        <h2 id="articles-title" class="sr-only">All Articles</h2>
+
+        <div class="filter-bar" data-filter-bar role="group" aria-label="Filter articles by category">
+          <button type="button" class="filter-btn" data-filter="all" aria-pressed="true">All</button>
+          <button type="button" class="filter-btn" data-filter="ml" aria-pressed="false">Machine Learning</button>
+          <button type="button" class="filter-btn" data-filter="software" aria-pressed="false">Software Engineering</button>
+          <button type="button" class="filter-btn" data-filter="chem" aria-pressed="false">Chemistry</button>
+        </div>
+
+        <div class="grid grid--3">
+          <div class="project-grid-item" data-tags="ml chem">
+            <article class="card">
+              <div class="article-card__meta">
+                <span>May 2026</span><span aria-hidden="true">·</span><span>9 min read</span>
+              </div>
+              <span class="badge badge--purple badge--card-tag">Machine Learning</span>
+              <h3 class="article-card__title">A Practical Introduction to Graph Neural Networks for Chemists</h3>
+              <p class="article-card__excerpt">Graph neural networks are a natural fit for molecules, but the jump from tabular ML to graph-structured data trips up a lot of chemists. Here's the intuition, without skipping the math.</p>
+              <div class="card__footer">
+                <a href="blog/gnn-intro-for-chemists.html" class="card__link">Read article
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </a>
+              </div>
+            </article>
+          </div>
+
+          <div class="project-grid-item" data-tags="software chem">
+            <article class="card">
+              <div class="article-card__meta">
+                <span>Mar 2026</span><span aria-hidden="true">·</span><span>7 min read</span>
+              </div>
+              <span class="badge badge--blue badge--card-tag">Software Engineering</span>
+              <h3 class="article-card__title">Notes on Reproducibility in Computational Chemistry Pipelines</h3>
+              <p class="article-card__excerpt">Most computational chemistry results can't be rerun two years later. Here's what breaks, and the small set of practices that actually fix it.</p>
+              <div class="card__footer">
+                <a href="blog/reproducibility-in-comp-chem.html" class="card__link">Read article
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </a>
+              </div>
+            </article>
+          </div>
+
+          <div class="project-grid-item" data-tags="ml chem">
+            <article class="card">
+              <div class="article-card__meta">
+                <span>Jan 2026</span><span aria-hidden="true">·</span><span>6 min read</span>
+              </div>
+              <span class="badge badge--green badge--card-tag">Chemistry</span>
+              <h3 class="article-card__title">Why Most Molecular Property Predictors Fail to Generalize</h3>
+              <p class="article-card__excerpt">A model that performs well on a benchmark split often collapses on genuinely novel scaffolds. The culprit is usually distribution shift, not model capacity.</p>
+              <div class="card__footer">
+                <a href="blog/property-predictors-generalization.html" class="card__link">Read article
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--alt" aria-labelledby="contact-cta-title">
+      <div class="container">
+        <div class="panel cta-block">
+          <div>
+            <p class="eyebrow eyebrow--green">Get in Touch</p>
+            <h2 id="contact-cta-title" class="cta-block__title">Have a question about something I've written?</h2>
+            <p class="cta-block__desc">I'm always glad to hear feedback, corrections, or follow-up questions on any of these.</p>
+          </div>
+          <div class="cta-block__actions">
+            <a href="contact.html" class="btn btn--primary">Contact Me</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <p class="footer-brand__name">Kian Rostami</p>
+          <p class="footer-brand__desc">Research scientist working across computational chemistry, machine learning, and open-source scientific software.</p>
+        </div>
+        <div>
+          <p class="footer-col__title">Navigate</p>
+          <div class="footer-col__list">
+            <a href="research.html">Research</a>
+            <a href="projects.html">Projects</a>
+            <a href="blog.html">Blog</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+          </div>
+        </div>
+        <div>
+          <p class="footer-col__title">Connect</p>
+          <div class="footer-col__list">
+            <a href="mailto:kian@example.com">Email</a>
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="https://scholar.google.com" target="_blank" rel="noopener noreferrer">Google Scholar</a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="https://orcid.org" target="_blank" rel="noopener noreferrer">ORCID</a>
+          </div>
+        </div>
+        <div>
+          <p class="footer-col__title">Account</p>
+          <div class="footer-col__list">
+            <a href="login.html">Sign In</a>
+            <a href="register.html">Register</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© <span data-current-year>2026</span> Kian Rostami. All rights reserved.</p>
+        <p>Built with HTML, CSS &amp; JavaScript.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/nav.js"></script>
+  <script src="assets/js/forms.js"></script>
+  <script src="assets/js/filter.js"></script>
+  <script src="assets/js/motion.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -1,19 +1,107 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Contact Us</h1>
-    <p>This is the Contact Page!</p>
-    <nav>
-        <ul>
-            <li><a href="{% url 'home' %}">Home</a></li>
-            <li><a href="{% url 'about' %}">About</a></li>
-            <li><a href="{% url 'contact' %}">Contact</a></li>
-        </ul>
-    </nav>
-</body>
-</html>
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+    <div class="container">
+      <div class="page-header">
+        <p class="eyebrow">Contact</p>
+        <h1 class="page-header__title">Contact</h1>
+        <p class="lead page-header__lead">Research collaboration, open-source questions, speaking opportunities, or anything adjacent — I read everything that comes through here.</p>
+      </div>
+    </div>
+
+    <section class="glass-zone" aria-labelledby="form-title">
+      <svg class="glass-zone__motif" viewBox="0 0 1200 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <g stroke="#0F172A" stroke-width="1">
+          <line x1="120" y1="90" x2="260" y2="180"/>
+          <line x1="260" y1="180" x2="180" y2="300"/>
+          <line x1="260" y1="180" x2="420" y2="140"/>
+          <line x1="420" y1="140" x2="560" y2="220"/>
+          <line x1="560" y1="220" x2="700" y2="180"/>
+          <line x1="700" y1="180" x2="840" y2="260"/>
+          <line x1="840" y1="260" x2="980" y2="200"/>
+          <line x1="980" y1="200" x2="1100" y2="120"/>
+        </g>
+        <g fill="#0F172A">
+          <circle cx="120" cy="90" r="4"/><circle cx="260" cy="180" r="4"/><circle cx="180" cy="300" r="4"/>
+          <circle cx="420" cy="140" r="4"/><circle cx="560" cy="220" r="4"/><circle cx="700" cy="180" r="4"/>
+          <circle cx="840" cy="260" r="4"/><circle cx="980" cy="200" r="4"/><circle cx="1100" cy="120" r="4"/>
+        </g>
+      </svg>
+
+      <div class="container">
+        <div class="glass-panel featured-project">
+          <div>
+            <h2 id="form-title" class="sr-only">Contact Form</h2>
+
+            <form data-form="validate" novalidate>
+              <div class="form-grid form-grid--2">
+                <div class="field">
+                  <label class="field__label" for="contact-name">Name</label>
+                  <input class="field__input" type="text" id="contact-name" name="name" placeholder="Your name" required autocomplete="name">
+                  <p class="field__error" role="alert">Enter your name.</p>
+                </div>
+
+                <div class="field">
+                  <label class="field__label" for="contact-email">Email</label>
+                  <input class="field__input" type="email" id="contact-email" name="email" placeholder="you@example.com" required autocomplete="email">
+                  <p class="field__error" role="alert">Enter a valid email address.</p>
+                </div>
+
+                <div class="field field--full">
+                  <label class="field__label" for="contact-subject">Subject</label>
+                  <select class="field__select" id="contact-subject" name="subject">
+                    <option value="research">Research Collaboration</option>
+                    <option value="opensource">Open-Source / GitHub Issue</option>
+                    <option value="speaking">Speaking Opportunity</option>
+                    <option value="press">Press / Media</option>
+                    <option value="other">Something Else</option>
+                  </select>
+                </div>
+
+                <div class="field field--full">
+                  <label class="field__label" for="contact-message">Message</label>
+                  <textarea class="field__textarea" id="contact-message" name="message" placeholder="What would you like to talk about?" required></textarea>
+                  <p class="field__error" role="alert">Enter a message.</p>
+                </div>
+              </div>
+
+              <div class="form-actions">
+                <button type="submit" class="btn btn--on-glass">Send Message</button>
+              </div>
+            </form>
+
+            <p class="form-success" role="status">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              Thanks for reaching out — I'll get back to you soon.
+            </p>
+          </div>
+
+          <aside class="featured-project__aside">
+            <p class="featured-project__aside-title">Other Ways to Reach Me</p>
+            <div class="contact-info">
+              <div>
+                <p class="contact-info__item-label">Email</p>
+                <p class="contact-info__item-value"><a class="text-link" href="mailto:kian@example.com">kian@example.com</a></p>
+              </div>
+              <div>
+                <p class="contact-info__item-label">GitHub</p>
+                <p class="contact-info__item-value"><a class="text-link" href="https://github.com" target="_blank" rel="noopener noreferrer">github.com/kianrostami</a></p>
+              </div>
+              <div>
+                <p class="contact-info__item-label">Google Scholar</p>
+                <p class="contact-info__item-value"><a class="text-link" href="https://scholar.google.com" target="_blank" rel="noopener noreferrer">View publications</a></p>
+              </div>
+              <div>
+                <p class="contact-info__item-label">Typical Response Time</p>
+                <p class="contact-info__item-value">2–3 business days</p>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+{% endblock %}

@@ -1,23 +1,538 @@
+{% extends "base.html" %}
 {% load static %}
+{% block content %}
+  <!-- ============================== HEADER ============================== -->
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-    <link rel="stylesheet" href="{% static 'test.css' %}">
-</head>
-<body>
+    <!-- ============================== HERO ============================== -->
+    <section class="glass-zone hero" aria-labelledby="hero-title">
+      <svg class="glass-zone__motif" viewBox="0 0 1200 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <g stroke="#0F172A" stroke-width="1">
+          <line x1="120" y1="90" x2="260" y2="180"/>
+          <line x1="260" y1="180" x2="180" y2="300"/>
+          <line x1="260" y1="180" x2="420" y2="140"/>
+          <line x1="420" y1="140" x2="560" y2="220"/>
+          <line x1="560" y1="220" x2="520" y2="360"/>
+          <line x1="560" y1="220" x2="700" y2="180"/>
+          <line x1="700" y1="180" x2="840" y2="260"/>
+          <line x1="840" y1="260" x2="980" y2="200"/>
+          <line x1="840" y1="260" x2="880" y2="400"/>
+          <line x1="180" y1="300" x2="320" y2="380"/>
+          <line x1="980" y1="200" x2="1100" y2="120"/>
+          <line x1="700" y1="180" x2="640" y2="60"/>
+        </g>
+        <g fill="#0F172A">
+          <circle cx="120" cy="90" r="4"/>
+          <circle cx="260" cy="180" r="4"/>
+          <circle cx="180" cy="300" r="4"/>
+          <circle cx="420" cy="140" r="4"/>
+          <circle cx="560" cy="220" r="4"/>
+          <circle cx="520" cy="360" r="4"/>
+          <circle cx="700" cy="180" r="4"/>
+          <circle cx="840" cy="260" r="4"/>
+          <circle cx="980" cy="200" r="4"/>
+          <circle cx="880" cy="400" r="4"/>
+          <circle cx="320" cy="380" r="4"/>
+          <circle cx="1100" cy="120" r="4"/>
+          <circle cx="640" cy="60" r="4"/>
+        </g>
+      </svg>
 
-    <h1>Welcome to the Home Page!</h1>
-    <p>This is a simple Django application with a home page, about page, and contact page.</p>
-    <nav>
-        <ul>
-            <li><a href="{% url 'home' %}">Home</a></li>
-            <li><a href="{% url 'about' %}">About</a></li>
-            <li><a href="{% url 'contact' %}">Contact</a></li>
-        </ul>
-    </nav>
-</body>
-</html>
+      <div class="container hero__inner">
+        <p class="eyebrow hero__eyebrow">Computational Chemistry — Machine Learning — Open-Source Software</p>
+        <h1 id="hero-title" class="hero__title">Building machine learning systems that help discover new molecules.</h1>
+        <p class="hero__lead">I'm Kian Rostami, a research scientist working at the intersection of computational chemistry and machine learning. I develop models that predict molecular behavior, and open-source tools that make that research reproducible.</p>
+
+        <div class="hero__actions">
+          <a href="research.html" class="btn btn--on-glass">View Research</a>
+          <a href="projects.html" class="btn btn--secondary">See Projects</a>
+        </div>
+
+        <div class="glass-panel hero__panel" role="group" aria-label="Career highlights">
+          <div class="hero-stat">
+            <p class="hero-stat__value">5</p>
+            <p class="hero-stat__label">Publications</p>
+          </div>
+          <div class="hero-stat">
+            <p class="hero-stat__value">4</p>
+            <p class="hero-stat__label">Open-source libraries</p>
+          </div>
+          <div class="hero-stat">
+            <p class="hero-stat__value">2,300+</p>
+            <p class="hero-stat__label">GitHub stars</p>
+          </div>
+          <div class="hero-stat">
+            <p class="hero-stat__value">6+</p>
+            <p class="hero-stat__label">Years in the field</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================== INTRODUCTION =========================== -->
+    <section class="section" aria-labelledby="intro-title">
+      <div class="container">
+        <div class="grid grid--2 grid--top grid--gap-lg">
+          <div>
+            <p class="eyebrow">Introduction</p>
+            <h2 id="intro-title" class="section-header__title">Where chemistry meets machine learning</h2>
+          </div>
+          <div class="stack">
+            <p>My work sits between two disciplines that don't often share a vocabulary: computational chemistry, which is precise and physically grounded, and machine learning, which is statistical and data-hungry. I build models that respect the former while exploiting the latter — using molecular structure directly, rather than treating chemistry as an arbitrary tabular dataset.</p>
+            <p>In practice, that means graph neural networks for property prediction, generative models for candidate design, and a fair amount of unglamorous software engineering to make sure the resulting pipelines are reproducible years after a paper is published — not just on the day it's submitted.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================== FEATURED RESEARCH ========================== -->
+    <section class="section section--alt" aria-labelledby="research-title">
+      <div class="container">
+        <div class="section-header">
+          <p class="eyebrow eyebrow--purple">Featured Research</p>
+          <h2 id="research-title" class="section-header__title">Three questions I keep returning to</h2>
+          <p class="lead section-header__lead">Each research thread below tackles a different bottleneck between raw chemical data and a usable scientific result.</p>
+        </div>
+
+        <div class="grid grid--3">
+          <article class="card">
+            <div class="card__icon card__icon--blue" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="2.5"/><ellipse cx="12" cy="12" rx="9" ry="4"/><ellipse cx="12" cy="12" rx="9" ry="4" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="9" ry="4" transform="rotate(120 12 12)"/></svg>
+            </div>
+            <h3 class="card__title">Molecular Property Prediction</h3>
+            <p class="card__body">Graph neural networks that predict reactivity, solubility, and reaction yield directly from molecular structure — reducing reliance on expensive wet-lab screening.</p>
+            <div class="card__footer">
+              <a href="research.html" class="card__link">View research
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card__icon card__icon--purple" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="6" r="2"/><circle cx="18" cy="6" r="2"/><circle cx="12" cy="18" r="2"/><line x1="7.6" y1="7.2" x2="11" y2="16.3"/><line x1="16.4" y1="7.2" x2="13" y2="16.3"/><line x1="8" y1="6" x2="16" y2="6"/></svg>
+            </div>
+            <h3 class="card__title">Generative Molecular Design</h3>
+            <p class="card__body">Generative models that propose novel candidate molecules conditioned on target properties, narrowing the search space for early-stage discovery.</p>
+            <div class="card__footer">
+              <a href="research.html" class="card__link">View research
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card__icon card__icon--green" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>
+            </div>
+            <h3 class="card__title">Reproducible Scientific Software</h3>
+            <p class="card__body">Open-source tooling for versioned, config-driven computational chemistry pipelines, built so results can be audited and rerun years later.</p>
+            <div class="card__footer">
+              <a href="research.html" class="card__link">View research
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================== FEATURED PROJECTS ========================== -->
+    <section class="section" aria-labelledby="projects-title">
+      <div class="container">
+        <div class="section-header">
+          <p class="eyebrow">Featured Projects</p>
+          <h2 id="projects-title" class="section-header__title">Software built to be used, not just published</h2>
+        </div>
+
+        <div class="glass-zone glass-zone--card">
+          <svg class="glass-zone__motif" viewBox="0 0 1200 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <g stroke="#0F172A" stroke-width="1">
+              <line x1="80" y1="60" x2="220" y2="140"/>
+              <line x1="220" y1="140" x2="180" y2="260"/>
+              <line x1="220" y1="140" x2="380" y2="100"/>
+              <line x1="380" y1="100" x2="520" y2="200"/>
+              <line x1="520" y1="200" x2="480" y2="320"/>
+              <line x1="520" y1="200" x2="680" y2="160"/>
+              <line x1="680" y1="160" x2="820" y2="240"/>
+              <line x1="820" y1="240" x2="960" y2="180"/>
+              <line x1="960" y1="180" x2="1080" y2="260"/>
+            </g>
+            <g fill="#0F172A">
+              <circle cx="80" cy="60" r="4"/><circle cx="220" cy="140" r="4"/><circle cx="180" cy="260" r="4"/>
+              <circle cx="380" cy="100" r="4"/><circle cx="520" cy="200" r="4"/><circle cx="480" cy="320" r="4"/>
+              <circle cx="680" cy="160" r="4"/><circle cx="820" cy="240" r="4"/><circle cx="960" cy="180" r="4"/><circle cx="1080" cy="260" r="4"/>
+            </g>
+          </svg>
+
+          <div class="glass-panel featured-project">
+            <div>
+              <p class="eyebrow eyebrow--purple featured-project__label">Featured Project</p>
+              <h3 class="featured-project__title">MolGraphNet</h3>
+              <p class="featured-project__desc">An open-source graph neural network library for molecular property prediction, built on PyTorch Geometric. Adopted by several academic labs as a baseline for reaction-yield and solubility prediction benchmarks.</p>
+
+              <div class="badge-row badge-row--below-desc">
+                <span class="badge badge--purple">Machine Learning</span>
+                <span class="badge badge--green">Chemistry</span>
+                <span class="badge badge--neutral">Open Source</span>
+              </div>
+
+              <div class="featured-project__stats">
+                <div>
+                  <p class="featured-project__stat-value">1,900+</p>
+                  <p class="featured-project__stat-label">GitHub stars</p>
+                </div>
+                <div>
+                  <p class="featured-project__stat-value">12</p>
+                  <p class="featured-project__stat-label">Contributors</p>
+                </div>
+                <div>
+                  <p class="featured-project__stat-value">6</p>
+                  <p class="featured-project__stat-label">Labs using it</p>
+                </div>
+              </div>
+
+              <div class="featured-project__actions">
+                <a href="projects/molgraphnet.html" class="btn btn--on-glass">View Case Study</a>
+                <a href="https://github.com" class="btn btn--secondary" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+              </div>
+            </div>
+
+            <aside class="featured-project__aside">
+              <p class="featured-project__aside-title">Stack</p>
+              <dl class="featured-project__stack">
+                <div class="featured-project__stack-item">
+                  <dt>Core</dt><dd>Python, PyTorch Geometric</dd>
+                </div>
+                <div class="featured-project__stack-item">
+                  <dt>Chemistry</dt><dd>RDKit</dd>
+                </div>
+                <div class="featured-project__stack-item">
+                  <dt>Infra</dt><dd>Docker, GitHub Actions</dd>
+                </div>
+                <div class="featured-project__stack-item">
+                  <dt>License</dt><dd>MIT</dd>
+                </div>
+              </dl>
+            </aside>
+          </div>
+        </div>
+
+        <div class="grid grid--2">
+          <article class="card">
+            <div class="badge-row badge-row--card-top">
+              <span class="badge badge--blue">Software</span>
+              <span class="badge badge--green">Chemistry</span>
+            </div>
+            <h3 class="card__title">ChemPipe</h3>
+            <p class="card__body">A reproducible workflow framework for high-throughput computational chemistry screening, with configuration-driven pipelines and built-in provenance tracking.</p>
+            <div class="card__footer">
+              <a href="projects/chempipe.html" class="card__link">View project
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="badge-row badge-row--card-top">
+              <span class="badge badge--purple">Machine Learning</span>
+              <span class="badge badge--green">Chemistry</span>
+            </div>
+            <h3 class="card__title">LatentMol</h3>
+            <p class="card__body">A generative model for de novo molecule generation, using a variational latent space conditioned on target physicochemical properties.</p>
+            <div class="card__footer">
+              <a href="projects/latentmol.html" class="card__link">View project
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </a>
+            </div>
+          </article>
+        </div>
+
+        <div class="section-footer text-center">
+          <a href="projects.html" class="btn btn--secondary">View All Projects</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================== LATEST ARTICLES ========================== -->
+    <section class="section section--alt" aria-labelledby="articles-title">
+      <div class="container">
+        <div class="section-header">
+          <p class="eyebrow">Latest Articles</p>
+          <h2 id="articles-title" class="section-header__title">Notes on research and engineering</h2>
+        </div>
+
+        <div class="grid grid--3">
+          <article class="card">
+            <div class="article-card__meta">
+              <span>May 2026</span><span aria-hidden="true">·</span><span>9 min read</span>
+            </div>
+            <span class="badge badge--purple badge--card-tag">Machine Learning</span>
+            <h3 class="article-card__title">A Practical Introduction to Graph Neural Networks for Chemists</h3>
+            <p class="article-card__excerpt">Graph neural networks are a natural fit for molecules, but the jump from tabular ML to graph-structured data trips up a lot of chemists. Here's the intuition, without skipping the math.</p>
+            <div class="card__footer">
+              <a href="blog/gnn-intro-for-chemists.html" class="card__link">Read article
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="article-card__meta">
+              <span>Mar 2026</span><span aria-hidden="true">·</span><span>7 min read</span>
+            </div>
+            <span class="badge badge--blue badge--card-tag">Software Engineering</span>
+            <h3 class="article-card__title">Notes on Reproducibility in Computational Chemistry Pipelines</h3>
+            <p class="article-card__excerpt">Most computational chemistry results can't be rerun two years later. Here's what breaks, and the small set of practices that actually fix it.</p>
+            <div class="card__footer">
+              <a href="blog/reproducibility-in-comp-chem.html" class="card__link">Read article
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="article-card__meta">
+              <span>Jan 2026</span><span aria-hidden="true">·</span><span>6 min read</span>
+            </div>
+            <span class="badge badge--green badge--card-tag">Chemistry</span>
+            <h3 class="article-card__title">Why Most Molecular Property Predictors Fail to Generalize</h3>
+            <p class="article-card__excerpt">A model that performs well on a benchmark split often collapses on genuinely novel scaffolds. The culprit is usually distribution shift, not model capacity.</p>
+            <div class="card__footer">
+              <a href="blog/property-predictors-generalization.html" class="card__link">Read article
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </a>
+            </div>
+          </article>
+        </div>
+
+        <div class="section-footer text-center">
+          <a href="blog.html" class="btn btn--secondary">Read All Articles</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- =============================== SKILLS =============================== -->
+    <section class="section" aria-labelledby="skills-title">
+      <div class="container">
+        <div class="section-header">
+          <p class="eyebrow">Skills</p>
+          <h2 id="skills-title" class="section-header__title">Tools I work with</h2>
+        </div>
+
+        <div class="skills-grid">
+          <div>
+            <h3 class="skill-group__title">Machine Learning</h3>
+            <div class="skill-group__list">
+              <span class="badge badge--neutral">Python</span>
+              <span class="badge badge--neutral">PyTorch</span>
+              <span class="badge badge--neutral">Graph Neural Networks</span>
+              <span class="badge badge--neutral">Generative Models</span>
+              <span class="badge badge--neutral">Scikit-learn</span>
+              <span class="badge badge--neutral">Uncertainty Quantification</span>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="skill-group__title">Computational Chemistry</h3>
+            <div class="skill-group__list">
+              <span class="badge badge--neutral">RDKit</span>
+              <span class="badge badge--neutral">Molecular Dynamics</span>
+              <span class="badge badge--neutral">Cheminformatics</span>
+              <span class="badge badge--neutral">Quantum Chemistry Basics</span>
+              <span class="badge badge--neutral">OpenMM</span>
+              <span class="badge badge--neutral">PySCF</span>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="skill-group__title">Software Engineering</h3>
+            <div class="skill-group__list">
+              <span class="badge badge--neutral">Docker</span>
+              <span class="badge badge--neutral">CI/CD</span>
+              <span class="badge badge--neutral">Git</span>
+              <span class="badge badge--neutral">SQL</span>
+              <span class="badge badge--neutral">REST APIs</span>
+              <span class="badge badge--neutral">Linux</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================= RESEARCH INTERESTS ========================= -->
+    <section class="section section--alt" aria-labelledby="interests-title">
+      <div class="container">
+        <div class="section-header">
+          <p class="eyebrow eyebrow--green">Research Interests</p>
+          <h2 id="interests-title" class="section-header__title">What I'm currently exploring</h2>
+        </div>
+
+        <div class="interest-list">
+          <div class="interest-item">
+            <span class="interest-item__index">01</span>
+            <div>
+              <h3 class="interest-item__title">Machine Learning for Molecular Property Prediction</h3>
+              <p class="interest-item__desc">Predicting reactivity, solubility, and toxicity directly from molecular graphs.</p>
+            </div>
+          </div>
+          <div class="interest-item">
+            <span class="interest-item__index">02</span>
+            <div>
+              <h3 class="interest-item__title">Generative Models for Molecular &amp; Materials Design</h3>
+              <p class="interest-item__desc">Proposing novel, synthesizable candidates conditioned on target properties.</p>
+            </div>
+          </div>
+          <div class="interest-item">
+            <span class="interest-item__index">03</span>
+            <div>
+              <h3 class="interest-item__title">Graph Neural Networks Applied to Chemistry</h3>
+              <p class="interest-item__desc">Architectures that respect molecular symmetry and structure natively.</p>
+            </div>
+          </div>
+          <div class="interest-item">
+            <span class="interest-item__index">04</span>
+            <div>
+              <h3 class="interest-item__title">Reproducible &amp; Scalable Scientific Software</h3>
+              <p class="interest-item__desc">Infrastructure that keeps computational results auditable over time.</p>
+            </div>
+          </div>
+          <div class="interest-item">
+            <span class="interest-item__index">05</span>
+            <div>
+              <h3 class="interest-item__title">Uncertainty Quantification in Predictive Chemistry</h3>
+              <p class="interest-item__desc">Knowing when a model's prediction should — and shouldn't — be trusted.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =============================== TIMELINE =============================== -->
+    <section class="section" aria-labelledby="timeline-title">
+      <div class="container">
+        <div class="section-header">
+          <p class="eyebrow">Timeline</p>
+          <h2 id="timeline-title" class="section-header__title">How I got here</h2>
+        </div>
+
+        <ol class="timeline">
+          <li class="timeline-item">
+            <p class="timeline-item__year">2017</p>
+            <h3 class="timeline-item__title">BSc in Chemistry, minor in Computer Science</h3>
+            <p class="timeline-item__desc">Solvik University. Undergraduate thesis on cheminformatics descriptors for solubility prediction.</p>
+          </li>
+          <li class="timeline-item timeline-item--green">
+            <p class="timeline-item__year">2018</p>
+            <h3 class="timeline-item__title">First open-source contribution</h3>
+            <p class="timeline-item__desc">Began contributing to cheminformatics tooling in the RDKit ecosystem.</p>
+          </li>
+          <li class="timeline-item timeline-item--purple">
+            <p class="timeline-item__year">2019</p>
+            <h3 class="timeline-item__title">Started PhD in Computational Chemistry</h3>
+            <p class="timeline-item__desc">Bergström Institute of Technology, focused on machine learning methods for reaction outcome prediction.</p>
+          </li>
+          <li class="timeline-item">
+            <p class="timeline-item__year">2021</p>
+            <h3 class="timeline-item__title">First publication</h3>
+            <p class="timeline-item__desc">Presented early work on graph neural networks for reaction yield prediction at a machine learning workshop.</p>
+          </li>
+          <li class="timeline-item timeline-item--purple">
+            <p class="timeline-item__year">2022</p>
+            <h3 class="timeline-item__title">Released MolGraphNet v1.0</h3>
+            <p class="timeline-item__desc">Open-sourced the graph neural network library that would become the most widely adopted tool in this body of work.</p>
+          </li>
+          <li class="timeline-item timeline-item--green">
+            <p class="timeline-item__year">2023</p>
+            <h3 class="timeline-item__title">PhD dissertation defended; LatentMol released</h3>
+            <p class="timeline-item__desc">Dissertation on generative and predictive machine learning for molecular discovery.</p>
+          </li>
+          <li class="timeline-item">
+            <p class="timeline-item__year">2024 — Present</p>
+            <h3 class="timeline-item__title">Research Scientist</h3>
+            <p class="timeline-item__desc">Continuing research at the intersection of computational chemistry and machine learning, and maintaining open-source tools now used across several academic labs.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- =============================== NEWSLETTER =============================== -->
+    <section class="glass-zone" aria-labelledby="newsletter-title">
+      <svg class="glass-zone__motif" viewBox="0 0 1200 320" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <g stroke="#0F172A" stroke-width="1">
+          <line x1="100" y1="60" x2="240" y2="140"/>
+          <line x1="240" y1="140" x2="400" y2="90"/>
+          <line x1="400" y1="90" x2="560" y2="180"/>
+          <line x1="560" y1="180" x2="720" y2="120"/>
+          <line x1="720" y1="120" x2="880" y2="200"/>
+          <line x1="880" y1="200" x2="1040" y2="140"/>
+        </g>
+        <g fill="#0F172A">
+          <circle cx="100" cy="60" r="4"/><circle cx="240" cy="140" r="4"/><circle cx="400" cy="90" r="4"/>
+          <circle cx="560" cy="180" r="4"/><circle cx="720" cy="120" r="4"/><circle cx="880" cy="200" r="4"/><circle cx="1040" cy="140" r="4"/>
+        </g>
+      </svg>
+
+      <div class="container">
+        <div class="glass-panel cta-block">
+          <div>
+            <p class="eyebrow">Newsletter</p>
+            <h2 id="newsletter-title" class="cta-block__title">Occasional notes on ML for chemistry</h2>
+            <p class="cta-block__desc">A short email whenever I publish new research, release a library, or write something worth sharing. No spam, unsubscribe anytime.</p>
+          </div>
+
+          <div>
+            <form class="form-inline" data-form="newsletter" novalidate>
+              <div class="field">
+                <label class="sr-only" for="newsletter-email">Email address</label>
+                <input class="field__input" type="email" id="newsletter-email" name="email" placeholder="you@example.com" required autocomplete="email">
+                <p class="field__error" role="alert">Enter a valid email address.</p>
+              </div>
+              <button type="submit" class="btn btn--on-glass">Subscribe</button>
+            </form>
+            <p class="form-success" role="status">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              Thanks — check your inbox to confirm.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =============================== CONTACT CTA =============================== -->
+    <section class="glass-zone" aria-labelledby="contact-cta-title">
+      <svg class="glass-zone__motif" viewBox="0 0 1200 320" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <g stroke="#0F172A" stroke-width="1">
+          <line x1="160" y1="200" x2="320" y2="120"/>
+          <line x1="320" y1="120" x2="480" y2="180"/>
+          <line x1="480" y1="180" x2="640" y2="80"/>
+          <line x1="640" y1="80" x2="800" y2="160"/>
+          <line x1="800" y1="160" x2="960" y2="100"/>
+        </g>
+        <g fill="#0F172A">
+          <circle cx="160" cy="200" r="4"/><circle cx="320" cy="120" r="4"/><circle cx="480" cy="180" r="4"/>
+          <circle cx="640" cy="80" r="4"/><circle cx="800" cy="160" r="4"/><circle cx="960" cy="100" r="4"/>
+        </g>
+      </svg>
+
+      <div class="container">
+        <div class="glass-panel cta-block">
+          <div>
+            <p class="eyebrow eyebrow--green">Get in Touch</p>
+            <h2 id="contact-cta-title" class="cta-block__title">Working on something in computational chemistry or ML tooling?</h2>
+            <p class="cta-block__desc">I'm always glad to talk about research collaborations, open-source contributions, or speaking opportunities.</p>
+          </div>
+
+          <div class="cta-block__actions">
+            <a href="contact.html" class="btn btn--on-glass">Contact Me</a>
+            <a href="mailto:kian@example.com" class="btn btn--secondary">Email Directly</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================== FOOTER ============================== -->
+
+
+{% endblock %}

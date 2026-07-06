@@ -1,0 +1,72 @@
+/* ==========================================================================
+   AUTH SHELL
+   Centered card layout for Login, Register, Forgot Password, Reset Password.
+   No glass here — auth is utility, not one of the four sanctioned zones.
+   ========================================================================== */
+
+.auth-shell {
+  min-height: calc(100vh - var(--header-height));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-block: var(--space-9);
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 420px;
+  padding: var(--space-7);
+  background-color: var(--color-bg-primary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+}
+
+.auth-card__header {
+  text-align: center;
+  margin-bottom: var(--space-7);
+}
+
+.auth-card__title {
+  margin-top: var(--space-3);
+}
+
+.auth-card__lead {
+  margin-top: var(--space-2);
+  font-size: var(--text-sm);
+}
+
+.auth-card form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.auth-card__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: var(--text-sm);
+}
+
+.auth-card__checkbox {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--color-text-secondary);
+}
+
+.auth-card__footer {
+  margin-top: var(--space-6);
+  text-align: center;
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+}
+
+/* ---- Secondary section — a divided block of extra content below the
+   primary card/actions, used on the 404 page. ------------------------------ */
+.auth-shell__more {
+  margin-top: var(--space-8);
+  padding-top: var(--space-7);
+  border-top: 1px solid var(--color-border);
+}

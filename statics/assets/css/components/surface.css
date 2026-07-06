@@ -1,0 +1,12 @@
+/* ==========================================================================
+   SURFACE
+   Plain panel surface — the non-glass counterpart used wherever a CTA or
+   callout needs a contained shape but does NOT qualify as one of the four
+   glass zones (Hero, Featured Project, Newsletter, Contact).
+   ========================================================================== */
+
+.panel {
+  background-color: var(--color-bg-tertiary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+}

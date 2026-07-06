@@ -1,0 +1,135 @@
+/* ==========================================================================
+   DESIGN TOKENS
+   Single source of truth. Every other stylesheet reads from here.
+   Do not hardcode raw color/spacing/type values outside this file.
+   ========================================================================== */
+
+:root {
+
+  /* ---- Color: background ------------------------------------------------ */
+  --color-bg-primary: #FFFFFF;
+  --color-bg-secondary: #F8FAFC;
+  --color-bg-tertiary: #F1F5F9;
+
+  /* ---- Color: text -------------------------------------------------------- */
+  --color-text-primary: #0F172A;
+  --color-text-secondary: #475569;
+  --color-text-tertiary: #5F6F86;
+  --color-text-inverse: #FFFFFF;
+
+  /* ---- Color: border -------------------------------------------------------- */
+  --color-border: #E2E8F0;
+  --color-border-strong: #8C94A1;
+
+  /* ---- Color: accent — Blue (primary / interface) ------------------------ */
+  --color-blue: #2563EB;
+  --color-blue-hover: #1D4ED8;
+  --color-blue-tint: #EFF6FF;
+  --color-blue-tint-strong: #DBEAFE;
+
+  /* ---- Color: accent — Green (chemistry domain) --------------------------- */
+  --color-green: #059669;
+  --color-green-tint: #ECFDF5;
+  --color-green-tint-strong: #D1FAE5;
+
+  /* ---- Color: accent — Purple (AI / ML domain) ----------------------------- */
+  --color-purple: #7C3AED;
+  --color-purple-tint: #F5F3FF;
+  --color-purple-tint-strong: #EDE9FE;
+
+  /* ---- Color: semantic (forms) --------------------------------------------- */
+  --color-success: #047857;
+  --color-error: #DC2626;
+  --color-error-tint: #FEF2F2;
+
+  /* ---- Typography: families ------------------------------------------------ */
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-fa: 'Vazirmatn', var(--font-sans);
+  --font-mono: 'IBM Plex Mono', 'SFMono-Regular', Consolas, 'Liberation Mono', monospace;
+
+  /* ---- Typography: scale (1.2–1.25 modular, capped for editorial calm) ---- */
+  --text-xs: 0.75rem;    /* 12px — meta, captions, labels */
+  --text-sm: 0.875rem;   /* 14px — small UI text */
+  --text-base: 1rem;     /* 16px — body */
+  --text-lg: 1.125rem;   /* 18px — lead paragraphs */
+  --text-xl: 1.25rem;    /* 20px — small headings */
+  --text-2xl: 1.5rem;    /* 24px — card titles */
+  --text-3xl: 1.875rem;  /* 30px — section titles */
+  --text-4xl: 2.25rem;   /* 36px — page titles */
+  --text-5xl: 3rem;      /* 48px — hero (mobile) */
+  --text-6xl: 3.75rem;   /* 60px — hero (desktop) */
+
+  /* ---- Typography: line-height -------------------------------------------- */
+  --leading-tight: 1.15;
+  --leading-snug: 1.35;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.65;
+  --leading-loose: 1.8;
+
+  /* ---- Typography: weight -------------------------------------------------- */
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+
+  /* ---- Typography: letter-spacing ------------------------------------------ */
+  --tracking-tight: -0.02em;
+  --tracking-normal: 0;
+  --tracking-wide: 0.04em;
+  --tracking-wider: 0.08em;
+
+  /* ---- Spacing: 8px rhythm, 4px micro-step --------------------------------- */
+  --space-1: 0.25rem;   /* 4px */
+  --space-2: 0.5rem;    /* 8px */
+  --space-3: 0.75rem;   /* 12px */
+  --space-4: 1rem;      /* 16px */
+  --space-5: 1.5rem;    /* 24px */
+  --space-6: 2rem;      /* 32px */
+  --space-7: 3rem;      /* 48px */
+  --space-8: 4rem;      /* 64px */
+  --space-9: 6rem;      /* 96px */
+  --space-10: 8rem;     /* 128px */
+
+  /* ---- Radius --------------------------------------------------------------- */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-full: 999px;
+
+  /* ---- Shadow (soft, low-opacity only — no hard drop shadows) --------------- */
+  --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.04);
+  --shadow-md: 0 4px 16px rgba(15, 23, 42, 0.06);
+  --shadow-lg: 0 16px 40px rgba(15, 23, 42, 0.08);
+  --shadow-glass: 0 8px 40px rgba(15, 23, 42, 0.10);
+
+  /* ---- Glass (reserved: hero, featured project, newsletter, contact ONLY) --- */
+  --glass-bg: rgba(255, 255, 255, 0.62);
+  --glass-border: rgba(255, 255, 255, 0.7);
+  --glass-blur: 20px;
+
+  /* ---- Layout ----------------------------------------------------------------- */
+  --container-max: 1200px;
+  --content-max: 720px;
+  --header-height: 76px;
+
+  /* ---- Motion ------------------------------------------------------------------ */
+  --transition-fast: 150ms ease;
+  --transition-base: 220ms ease;
+  --transition-slow: 400ms ease;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+
+  /* ---- Z-index ------------------------------------------------------------------ */
+  --z-header: 100;
+  --z-dropdown: 200;
+  --z-modal: 300;
+  --z-skiplink: 400;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --transition-fast: 0ms;
+    --transition-base: 0ms;
+    --transition-slow: 0ms;
+  }
+}
