@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Research — Kian Rostami</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%278%27 fill=%27%230F172A%27/%3E%3Ccircle cx=%2716%27 cy=%2716%27 r=%276%27 fill=%27%232563EB%27/%3E%3C/svg%3E">
+  <meta name="description" content="Research by Kian Rostami on machine learning for molecular property prediction, generative molecular design, and reproducible scientific software.">
+
+  <meta property="og:title" content="Research — Kian Rostami">
+  <meta property="og:description" content="Machine learning for molecular property prediction, generative molecular design, and reproducible scientific software.">
+  <meta property="og:type" content="website">
+  <meta name="robots" content="index, follow">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Vazirmatn:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/typography.css">
+  <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="assets/css/components/button.css">
+  <link rel="stylesheet" href="assets/css/components/badge.css">
+  <link rel="stylesheet" href="assets/css/components/nav.css">
+  <link rel="stylesheet" href="assets/css/components/footer.css">
+  <link rel="stylesheet" href="assets/css/components/glass.css">
+  <link rel="stylesheet" href="assets/css/components/surface.css">
+  <link rel="stylesheet" href="assets/css/components/page-header.css">
+  <link rel="stylesheet" href="assets/css/components/breadcrumb.css">
+  <link rel="stylesheet" href="assets/css/components/code.css">
+  <link rel="stylesheet" href="assets/css/components/toc.css">
+  <link rel="stylesheet" href="assets/css/components/article.css">
+  <link rel="stylesheet" href="assets/css/components/hero.css">
+  <link rel="stylesheet" href="assets/css/components/card.css">
+  <link rel="stylesheet" href="assets/css/components/research-area.css">
+  <link rel="stylesheet" href="assets/css/components/publication.css">
+  <link rel="stylesheet" href="assets/css/components/credential.css">
+  <link rel="stylesheet" href="assets/css/components/timeline.css">
+  <link rel="stylesheet" href="assets/css/components/skills.css">
+  <link rel="stylesheet" href="assets/css/components/form.css">
+  <link rel="stylesheet" href="assets/css/components/filter.css">
+  <link rel="stylesheet" href="assets/css/components/cta.css">
+  <link rel="stylesheet" href="assets/css/utilities.css">
+  <link rel="stylesheet" href="assets/css/motion.css">
+</head>
+<body>
+
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <!-- ============================== HEADER ============================== -->
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a href="index.html" class="brand">
+        <span class="brand__name">Kian Rostami</span>
+        <span class="brand__role">Computational Chemistry &amp; ML</span>
+      </a>
+
+      <nav class="nav-primary" aria-label="Primary">
+        <a class="nav-primary__link" href="research.html" aria-current="page">Research</a>
+        <a class="nav-primary__link" href="projects.html">Projects</a>
+        <a class="nav-primary__link" href="blog.html">Blog</a>
+        <a class="nav-primary__link" href="{% url 'about' %}">About</a>
+        <a class="nav-primary__link" href="{% url 'contact' %}">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="login.html" class="btn btn--ghost hide-mobile">Sign in</a>
+        <a href="{% url 'contact' %}" class="btn btn--primary hide-mobile">Get in Touch</a>
+        <button type="button" class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <nav id="mobile-nav" class="nav-mobile" aria-label="Mobile">
+    <a class="nav-mobile__link" href="research.html" aria-current="page">Research</a>
+    <a class="nav-mobile__link" href="projects.html">Projects</a>
+    <a class="nav-mobile__link" href="blog.html">Blog</a>
+    <a class="nav-mobile__link" href="{% url 'about' %}">About</a>
+    <a class="nav-mobile__link" href="{% url 'contact' %}">Contact</a>
+    <div class="nav-mobile__actions">
+      <a href="login.html" class="btn btn--secondary btn--full">Sign in</a>
+      <a href="{% url 'contact' %}" class="btn btn--primary btn--full">Get in Touch</a>
+    </div>
+  </nav>
+
+  <main id="main-content">
+
+    <!-- ============================== PAGE HEADER ============================== -->
+    <div class="container">
+      <div class="page-header">
+        <p class="eyebrow">Research</p>
+        <h1 class="page-header__title">Research</h1>
+        <p class="lead page-header__lead">My research asks how machine learning can be built on top of chemical structure, rather than around it — using molecular graphs, physical priors, and reproducible pipelines to make computational chemistry both more predictive and more trustworthy.</p>
+      </div>
+    </div>
+
+    <!-- ============================== RESEARCH AREAS ============================== -->
+    <section class="section" aria-labelledby="areas-title">
+      <div class="container">
+        <h2 id="areas-title" class="sr-only">Research Areas</h2>
+
+        <div class="research-area">
+          <div class="research-area__label">
+            <p class="research-area__index">01</p>
+            <span class="eyebrow">Machine Learning</span>
+          </div>
+          <div>
+            <h3 class="research-area__title">Molecular Property Prediction</h3>
+            <p class="research-area__desc">Most cheminformatics pipelines still represent molecules as fixed-length fingerprints, discarding the very structure that determines chemical behavior. My work uses graph neural networks that operate directly on the molecular graph — atoms as nodes, bonds as edges — to predict properties such as aqueous solubility, reaction yield, and toxicity. The goal isn't marginal benchmark gains; it's building models that generalize to genuinely novel scaffolds, which is where most published methods quietly fail.</p>
+            <div class="research-area__related">
+              <a class="research-area__related-link" href="projects/molgraphnet.html">
+                Related project: MolGraphNet
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </a>
+              <a class="research-area__related-link" href="#publications">
+                2 related publications
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="research-area">
+          <div class="research-area__label">
+            <p class="research-area__index">02</p>
+            <span class="eyebrow eyebrow--purple">Machine Learning</span>
+          </div>
+          <div>
+            <h3 class="research-area__title">Generative Molecular &amp; Materials Design</h3>
+            <p class="research-area__desc">Screening existing chemical libraries only gets you so far — the more interesting question is what molecules should exist that don't yet. I work on generative models, primarily variational and diffusion-based approaches, that propose candidate structures conditioned on target properties. The hard part is less the generative model itself and more making sure proposed candidates are synthesizable and chemically valid, not merely optimized on paper.</p>
+            <div class="research-area__related">
+              <a class="research-area__related-link" href="projects/latentmol.html">
+                Related project: LatentMol
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </a>
+              <a class="research-area__related-link" href="#publications">
+                1 related publication
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="research-area">
+          <div class="research-area__label">
+            <p class="research-area__index">03</p>
+            <span class="eyebrow eyebrow--green">Software</span>
+          </div>
+          <div>
+            <h3 class="research-area__title">Reproducible &amp; Scalable Scientific Software</h3>
+            <p class="research-area__desc">A model is only as useful as the pipeline that produced it, and most computational chemistry pipelines are effectively unreproducible eighteen months after publication — undocumented preprocessing, dependencies pinned nowhere, one-off scripts. I build open-source, configuration-driven tooling that treats a research pipeline as software: versioned, tested, and runnable by someone who wasn't in the room when it was built.</p>
+            <div class="research-area__related">
+              <a class="research-area__related-link" href="projects/chempipe.html">
+                Related project: ChemPipe
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </a>
+              <a class="research-area__related-link" href="#publications">
+                1 related publication
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== PUBLICATIONS ============================== -->
+    <section id="publications" class="section section--alt" aria-labelledby="publications-title">
+      <div class="container">
+        <div class="section-header">
+          <p class="eyebrow">Publications</p>
+          <h2 id="publications-title" class="section-header__title">Selected Publications</h2>
+        </div>
+
+        <div class="publication-list">
+          <article class="publication-item">
+            <p class="publication-item__year">2025</p>
+            <div>
+              <h3 class="publication-item__title">Graph Neural Networks for Predicting Reaction Yields in Multi-Step Synthesis</h3>
+              <p class="publication-item__meta">K. Rostami, A. Lindqvist, M. Chen — <span class="publication-item__venue">Journal of Computational Molecular Science</span>, 2025</p>
+              <div class="badge-row badge-row--pub">
+                <span class="badge badge--purple">Machine Learning</span>
+                <span class="badge badge--green">Chemistry</span>
+              </div>
+              <div class="publication-item__footer">
+                <a class="publication-item__link" href="#">PDF</a>
+                <a class="publication-item__link" href="#">DOI</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="publication-item">
+            <p class="publication-item__year">2024</p>
+            <div>
+              <h3 class="publication-item__title">ChemPipe: A Reproducible Workflow Framework for High-Throughput Computational Chemistry</h3>
+              <p class="publication-item__meta">K. Rostami — <span class="publication-item__venue">Journal of Research Software Engineering</span>, 2024</p>
+              <div class="badge-row badge-row--pub">
+                <span class="badge badge--blue">Software Engineering</span>
+                <span class="badge badge--green">Chemistry</span>
+              </div>
+              <div class="publication-item__footer">
+                <a class="publication-item__link" href="#">PDF</a>
+                <a class="publication-item__link" href="#">DOI</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="publication-item">
+            <p class="publication-item__year">2023</p>
+            <div>
+              <h3 class="publication-item__title">Latent Space Optimization for Conditional Molecule Generation</h3>
+              <p class="publication-item__meta">K. Rostami, S. Farhadi, M. Chen — <span class="publication-item__venue">International Conference on Data-Driven Chemistry</span>, 2023</p>
+              <div class="badge-row badge-row--pub">
+                <span class="badge badge--purple">Machine Learning</span>
+                <span class="badge badge--green">Chemistry</span>
+              </div>
+              <div class="publication-item__footer">
+                <a class="publication-item__link" href="#">PDF</a>
+                <a class="publication-item__link" href="#">DOI</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="publication-item">
+            <p class="publication-item__year">2023</p>
+            <div>
+              <h3 class="publication-item__title">Benchmarking Graph Neural Network Architectures for Molecular Property Prediction</h3>
+              <p class="publication-item__meta">K. Rostami — <span class="publication-item__venue">Journal of Computational Molecular Science</span>, 2023</p>
+              <div class="badge-row badge-row--pub">
+                <span class="badge badge--purple">Machine Learning</span>
+                <span class="badge badge--green">Chemistry</span>
+              </div>
+              <div class="publication-item__footer">
+                <a class="publication-item__link" href="#">PDF</a>
+                <a class="publication-item__link" href="#">DOI</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="publication-item">
+            <p class="publication-item__year">2021</p>
+            <div>
+              <h3 class="publication-item__title">Graph Neural Networks for Reaction Yield Prediction: A Preliminary Study</h3>
+              <p class="publication-item__meta">K. Rostami, A. Lindqvist — <span class="publication-item__venue">Workshop on Machine Learning for Molecules and Materials (MoML)</span>, 2021</p>
+              <div class="badge-row badge-row--pub">
+                <span class="badge badge--purple">Machine Learning</span>
+                <span class="badge badge--green">Chemistry</span>
+              </div>
+              <div class="publication-item__footer">
+                <a class="publication-item__link" href="#">PDF</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== CONTACT CTA (plain) ============================== -->
+    <section class="section" aria-labelledby="contact-cta-title">
+      <div class="container">
+        <div class="panel cta-block">
+          <div>
+            <p class="eyebrow eyebrow--green">Get in Touch</p>
+            <h2 id="contact-cta-title" class="cta-block__title">Interested in collaborating on this research?</h2>
+            <p class="cta-block__desc">I'm open to co-authorship, dataset sharing, and joint grant applications in machine learning for chemistry.</p>
+          </div>
+
+          <div class="cta-block__actions">
+            <a href="contact.html" class="btn btn--primary">Contact Me</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================== FOOTER ============================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <p class="footer-brand__name">Kian Rostami</p>
+          <p class="footer-brand__desc">Research scientist working across computational chemistry, machine learning, and open-source scientific software.</p>
+        </div>
+
+        <div>
+          <p class="footer-col__title">Navigate</p>
+          <div class="footer-col__list">
+            <a href="research.html">Research</a>
+            <a href="projects.html">Projects</a>
+            <a href="blog.html">Blog</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+          </div>
+        </div>
+
+        <div>
+          <p class="footer-col__title">Connect</p>
+          <div class="footer-col__list">
+            <a href="mailto:kian@example.com">Email</a>
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="https://scholar.google.com" target="_blank" rel="noopener noreferrer">Google Scholar</a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="https://orcid.org" target="_blank" rel="noopener noreferrer">ORCID</a>
+          </div>
+        </div>
+
+        <div>
+          <p class="footer-col__title">Account</p>
+          <div class="footer-col__list">
+            <a href="login.html">Sign In</a>
+            <a href="register.html">Register</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© <span data-current-year>2026</span> Kian Rostami. All rights reserved.</p>
+        <p>Built with HTML, CSS &amp; JavaScript.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/nav.js"></script>
+  <script src="assets/js/forms.js"></script>
+  <script src="assets/js/motion.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

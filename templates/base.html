@@ -5,12 +5,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kian Rostami — Computational Chemistry &amp; Machine Learning Research</title>
+  <title>Hadi Shayeq — Computational Chemistry &amp; Machine Learning Research</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%278%27 fill=%27%230F172A%27/%3E%3Ccircle cx=%2716%27 cy=%2716%27 r=%276%27 fill=%27%232563EB%27/%3E%3C/svg%3E">
-  <meta name="description" content="Kian Rostami is a research scientist working at the intersection of computational chemistry, machine learning, and open-source scientific software.">
+  <meta name="description" content="Hadi Shayeq is a research scientist working at the intersection of computational chemistry, machine learning, and open-source scientific software.">
 
   <!-- Open Graph / SEO placeholders — replace with production values -->
-  <meta property="og:title" content="Kian Rostami — Computational Chemistry &amp; Machine Learning Research">
+  <meta property="og:title" content="Hadi Shayeq — Computational Chemistry &amp; Machine Learning Research">
   <meta property="og:description" content="Research on machine learning for molecular discovery, and open-source tools for reproducible computational chemistry.">
   <meta property="og:type" content="website">
   <meta name="robots" content="index, follow">
@@ -55,8 +55,8 @@
   
   <header class="site-header">
     <div class="container site-header__inner">
-      <a href="index.html" class="brand">
-        <span class="brand__name">Kian Rostami</span>
+      <a href="{% url 'website:home' %}" class="brand">
+        <span class="brand__name">Hadi Shayeq</span>
         <span class="brand__role">Computational Chemistry &amp; ML</span>
       </a>
 
@@ -64,13 +64,13 @@
         <a class="nav-primary__link" href="research.html">Research</a>
         <a class="nav-primary__link" href="projects.html">Projects</a>
         <a class="nav-primary__link" href="blog.html">Blog</a>
-        <a class="nav-primary__link" href="about.html">About</a>
-        <a class="nav-primary__link" href="contact.html">Contact</a>
+        <a class="nav-primary__link" href="{% url 'website:about' %}">About</a>
+        <a class="nav-primary__link" href="{% url 'website:contact' %}">Contact</a>
       </nav>
 
       <div class="nav-actions">
         <a href="login.html" class="btn btn--ghost hide-mobile">Sign in</a>
-        <a href="contact.html" class="btn btn--primary hide-mobile">Get in Touch</a>
+        <a href="{% url 'website:contact' %}" class="btn btn--primary hide-mobile">Get in Touch</a>
         <button type="button" class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
           <span></span><span></span><span></span>
         </button>
@@ -82,11 +82,11 @@
     <a class="nav-mobile__link" href="research.html">Research</a>
     <a class="nav-mobile__link" href="projects.html">Projects</a>
     <a class="nav-mobile__link" href="blog.html">Blog</a>
-    <a class="nav-mobile__link" href="about.html">About</a>
-    <a class="nav-mobile__link" href="contact.html">Contact</a>
+    <a class="nav-mobile__link" href="{% url 'website:about' %}">About</a>
+    <a class="nav-mobile__link" href="{% url 'website:contact' %}">Contact</a>
     <div class="nav-mobile__actions">
       <a href="login.html" class="btn btn--secondary btn--full">Sign in</a>
-      <a href="contact.html" class="btn btn--primary btn--full">Get in Touch</a>
+      <a href="{% url 'website:contact' %}" class="btn btn--primary btn--full">Get in Touch</a>
     </div>
   </nav>
 
@@ -98,7 +98,7 @@
     <div class="container">
       <div class="footer-grid">
         <div>
-          <p class="footer-brand__name">Kian Rostami</p>
+          <p class="footer-brand__name">Hadi Shayeq</p>
           <p class="footer-brand__desc">Research scientist working across computational chemistry, machine learning, and open-source scientific software.</p>
         </div>
 
@@ -108,8 +108,8 @@
             <a href="research.html">Research</a>
             <a href="projects.html">Projects</a>
             <a href="blog.html">Blog</a>
-            <a href="about.html">About</a>
-            <a href="contact.html">Contact</a>
+            <a href="{% url 'website:about' %}">About</a>
+            <a href="{% url 'website:contact' %}">Contact</a>
           </div>
         </div>
 
@@ -134,7 +134,7 @@
       </div>
 
       <div class="footer-bottom">
-        <p>© <span data-current-year>2026</span> Kian Rostami. All rights reserved.</p>
+        <p>© <span data-current-year>2026</span> Hadi Shayeq. All rights reserved.</p>
         <p>Built with HTML, CSS &amp; JavaScript.</p>
       </div>
     </div>
