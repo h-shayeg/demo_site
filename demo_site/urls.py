@@ -23,6 +23,9 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('website.urls')),
+    path('research/', include('research.urls')),
+    path('project/', include('project.urls')),
+    path('blog/', include('blog.urls')),
 
 #   path('blog/', include('blog.urls'),
 #   path('url address', 'view function', name='name of the url'),

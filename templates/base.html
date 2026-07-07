@@ -61,9 +61,9 @@
       </a>
 
       <nav class="nav-primary" aria-label="Primary">
-        <a class="nav-primary__link" href="research.html">Research</a>
-        <a class="nav-primary__link" href="projects.html">Projects</a>
-        <a class="nav-primary__link" href="blog.html">Blog</a>
+        <a class="nav-primary__link" href="{% url 'research:research_index' %}">Research</a>
+        <a class="nav-primary__link" href="{% url 'project:project_index' %}">Projects</a>
+        <a class="nav-primary__link" href="{% url 'blog:blog_index' %}">Blog</a>
         <a class="nav-primary__link" href="{% url 'website:about' %}">About</a>
         <a class="nav-primary__link" href="{% url 'website:contact' %}">Contact</a>
       </nav>
@@ -79,9 +79,9 @@
   </header>
 
   <nav id="mobile-nav" class="nav-mobile" aria-label="Mobile">
-    <a class="nav-mobile__link" href="research.html">Research</a>
-    <a class="nav-mobile__link" href="projects.html">Projects</a>
-    <a class="nav-mobile__link" href="blog.html">Blog</a>
+    <a class="nav-mobile__link" href="{% url 'research:research_index' %}">Research</a>
+    <a class="nav-mobile__link" href="{% url 'project:project_index' %}">Projects</a>
+    <a class="nav-mobile__link" href="{% url 'blog:blog_index' %}">Blog</a>
     <a class="nav-mobile__link" href="{% url 'website:about' %}">About</a>
     <a class="nav-mobile__link" href="{% url 'website:contact' %}">Contact</a>
     <div class="nav-mobile__actions">
@@ -105,9 +105,9 @@
         <div>
           <p class="footer-col__title">Navigate</p>
           <div class="footer-col__list">
-            <a href="research.html">Research</a>
-            <a href="projects.html">Projects</a>
-            <a href="blog.html">Blog</a>
+            <a href="{% url 'research:research_index' %}">Research</a>
+            <a href="{% url 'project:project_index' %}">Projects</a>
+            <a href="{% url 'blog:blog_index' %}">Blog</a>
             <a href="{% url 'website:about' %}">About</a>
             <a href="{% url 'website:contact' %}">Contact</a>
           </div>
