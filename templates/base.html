@@ -52,6 +52,9 @@
 
   <a class="skip-link" href="#main-content">Skip to content</a>
 
+  <div class="reading-progress" aria-hidden="true">
+    <div class="reading-progress__bar"></div>
+  </div>
   
   <header class="site-header">
     <div class="container site-header__inner">
@@ -93,6 +96,7 @@
   <main id="main-content">
 
   {% block content %}
+  {% endblock %}
 
   <footer class="site-footer">
     <div class="container">
@@ -142,8 +146,8 @@
 
     <script src="{% static 'assets/js/nav.js' %}"></script>
   <script src="{% static 'assets/js/forms.js' %}"></script>
+  <script src="{% static 'assets/js/toc.js' %}"></script>
   <script src="{% static 'assets/js/motion.js' %}"></script>
   <script src="{% static 'assets/js/main.js' %}"></script>
 </body>
 </html>
-  {% endblock %}
