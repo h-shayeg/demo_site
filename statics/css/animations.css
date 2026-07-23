@@ -1,0 +1,154 @@
+/* ==========================================================================
+   Animations: scroll reveal, hero atmosphere, hover micro-interactions
+   ========================================================================== */
+
+/* ---- Scroll reveal (paired with js/main.js IntersectionObserver) ----------- */
+
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity var(--duration-slow) var(--ease-standard),
+              transform var(--duration-slow) var(--ease-standard);
+}
+
+[data-reveal].is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+[data-reveal-group] > * {
+  transition-delay: calc(var(--reveal-index, 0) * 80ms);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* ---- Molecule / bond backdrop (chemistry-inspired ambient motif) ------------ */
+
+.molecule-field {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.molecule-field .node {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  opacity: 0.12;
+  animation: drift 18s ease-in-out infinite;
+}
+
+.molecule-field .bond {
+  position: absolute;
+  width: 200px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(53, 86, 250, 0.18), transparent);
+  transform-origin: left center;
+  animation: pulse-bond 6s ease-in-out infinite;
+}
+
+.molecule-field .node:nth-of-type(1) { top: 10%; left: 15%; width: 60px; height: 60px; }
+.molecule-field .node:nth-of-type(2) { top: 55%; left: 68%; width: 100px; height: 100px; animation-delay: 2s; }
+.molecule-field .node:nth-of-type(3) { top: 78%; left: 22%; width: 44px; height: 44px; animation-delay: 4s; }
+.molecule-field .node:nth-of-type(4) { top: 28%; left: 78%; width: 50px; height: 50px; animation-delay: 1s; }
+
+.molecule-field .bond:nth-of-type(5) { top: 32%; left: 12%; width: 220px; transform: rotate(18deg); }
+.molecule-field .bond:nth-of-type(6) { top: 68%; left: 42%; width: 180px; transform: rotate(-12deg); animation-delay: 2s; }
+
+@keyframes drift {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(18px, -24px) scale(1.08); }
+  66% { transform: translate(-14px, 16px) scale(0.94); }
+}
+
+@keyframes pulse-bond {
+  0%, 100% { opacity: 0.25; }
+  50% { opacity: 0.6; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .molecule-field .node,
+  .molecule-field .bond {
+    animation: none;
+  }
+}
+
+/* ---- Hero entrance sequence -------------------------------------------------- */
+
+.hero-eyebrow,
+.hero-title,
+.hero-sub,
+.hero-actions {
+  opacity: 0;
+  transform: translateY(16px);
+  animation: rise var(--duration-slow) var(--ease-standard) forwards;
+}
+
+.hero-eyebrow { animation-delay: 0ms; }
+.hero-title { animation-delay: 90ms; }
+.hero-sub { animation-delay: 180ms; }
+.hero-actions { animation-delay: 270ms; }
+
+@keyframes rise {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-eyebrow, .hero-title, .hero-sub, .hero-actions {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+}
+
+/* ---- Card / link hover micro-interactions ------------------------------------ */
+
+.link-arrow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.link-arrow svg {
+  width: 16px;
+  height: 16px;
+  transition: transform var(--duration-fast) var(--ease-standard);
+}
+
+.link-arrow:hover svg {
+  transform: translateX(4px);
+}
+
+.icon-tile {
+  transition: transform var(--duration-base) var(--ease-standard),
+              background var(--duration-base) var(--ease-standard);
+}
+
+.card-hover:hover .icon-tile {
+  transform: rotate(-4deg) scale(1.05);
+}
+
+/* ---- Reaction/orbit loader used sparingly on data-heavy pages ---------------- */
+
+.orbit-loader {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-top-color: var(--color-white);
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}

@@ -1,0 +1,175 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+    <section class="section">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <span class="sep">/</span>
+          <a href="blog.html">Blog</a>
+          <span class="sep">/</span>
+          <span class="current">From Jupyter to Production</span>
+        </nav>
+
+        <div class="article-header mt-8">
+          <span class="badge badge-cs">Machine Learning</span>
+          <h1 class="page-title mt-4">From Jupyter to Production: Deploying ML for Materials Science</h1>
+          <div class="blog-card-meta justify-center mt-6">
+            <div class="avatar"><svg class="icon avatar-icon" aria-hidden="true">
+                <use href="#icon-user"></use>
+              </svg></div>
+            <span class="text-strong">Kai Rutherford</span><span>·</span><span>Jun 2, 2026</span><span>·</span><span>8
+              min read</span>
+          </div>
+          <div class="social-row justify-center mt-6">
+            <button class="btn-icon btn-secondary" aria-label="Share on X" type="button"><svg class="icon"
+                aria-hidden="true">
+                <use href="#icon-x"></use>
+              </svg></button>
+            <button class="btn-icon btn-secondary" aria-label="Share on LinkedIn" type="button"><svg class="icon"
+                aria-hidden="true">
+                <use href="#icon-linkedin"></use>
+              </svg></button>
+            <button class="btn-icon btn-secondary" aria-label="Copy link" type="button"><svg class="icon"
+                aria-hidden="true">
+                <use href="#icon-link"></use>
+              </svg></button>
+            <button class="btn-icon btn-secondary" aria-label="Bookmark this post" type="button"><svg class="icon"
+                aria-hidden="true">
+                <use href="#icon-bookmark"></use>
+              </svg></button>
+          </div>
+        </div>
+
+        <div class="blog-thumb hero mt-10">
+          <svg aria-hidden="true">
+            <use href="#icon-cpu"></use>
+          </svg>
+        </div>
+
+        <div class="layout-with-sidebar mt-16">
+          <article class="article-body">
+            <h2 id="introduction">Introduction</h2>
+            <p>Every research group eventually ends up with a notebook that "works" — a script someone can run top to
+              bottom to get an answer. The problem is that "works on my machine, sometimes" isn't the same as "works
+              whenever someone on the team needs it." That gap is what this post is about, using the reaction-yield
+              model behind the Neural Reaction Predictor as a running example.</p>
+
+            <h2 id="the-problem-with-notebooks">The problem with notebooks</h2>
+            <p>Notebooks are great for exploration and terrible for anything anyone else needs to depend on. Cell
+              execution order, hidden state, and unpinned dependencies mean a notebook that ran perfectly in March can
+              quietly fail in June. For a model the lab wanted to query before every reaction screen, that unreliability
+              was a real cost, not a nuisance.</p>
+            <ul>
+              <li>State could get out of sync with the code on screen</li>
+              <li>Dependencies drifted between environments</li>
+              <li>There was no way for a labmate to query the model without opening the notebook themselves</li>
+            </ul>
+
+            <h2 id="building-a-minimal-inference-service">Building a minimal inference service</h2>
+            <p>The fix wasn't complicated: wrap the trained model in a small HTTP service with one job — accept a
+              molecule, return a predicted yield and a confidence interval. Keeping the service's responsibility narrow
+              made it easy to reason about and easy to test.</p>
+            <blockquote>The goal isn't to build a platform. It's to build the smallest thing that lets someone else
+              press a button instead of opening your notebook.</blockquote>
+
+            <h2 id="packaging-the-model">Packaging the model</h2>
+            <p>The trained weights, the preprocessing code, and the exact library versions all had to travel together.
+              Pinning dependencies and containerizing the service meant the model that got tested was the model that got
+              used — no "it worked when I trained it" surprises three weeks later.</p>
+
+            <h2 id="deploying-and-monitoring">Deploying and monitoring</h2>
+            <p>Once the service was running, the last piece was visibility: logging every prediction alongside the
+              eventual real-world result, so the model's accuracy over time was something we could actually see rather
+              than assume. That log became the input for the active-learning loop described in the Neural Reaction
+              Predictor project.</p>
+
+            <h2 id="conclusion">Conclusion</h2>
+            <p>None of this required heavyweight infrastructure — just treating the model like a piece of software the
+              lab depends on, rather than a personal script. That shift in mindset mattered more than any specific tool
+              choice.</p>
+          </article>
+
+          <aside>
+            <div class="card sticky-aside">
+              <h3 class="card-title">On this page</h3>
+              <nav class="article-toc mt-4">
+                <a href="#introduction">Introduction</a>
+                <a href="#the-problem-with-notebooks">The problem with notebooks</a>
+                <a href="#building-a-minimal-inference-service">Building a minimal inference service</a>
+                <a href="#packaging-the-model">Packaging the model</a>
+                <a href="#deploying-and-monitoring">Deploying and monitoring</a>
+                <a href="#conclusion">Conclusion</a>
+              </nav>
+            </div>
+          </aside>
+        </div>
+
+        <div class="discipline-tags mt-10 max-w-md">
+          <span class="skill-pill">python</span>
+          <span class="skill-pill">machine-learning</span>
+          <span class="skill-pill">deployment</span>
+          <span class="skill-pill">apis</span>
+        </div>
+
+        <div class="card mt-10 author-card" data-reveal>
+          <div class="avatar avatar-lg"><svg class="icon avatar-icon" aria-hidden="true">
+              <use href="#icon-user"></use>
+            </svg></div>
+          <div>
+            <p class="text-strong">Kai Rutherford</p>
+            <p class="text-caption text-secondary mt-2">Computer scientist and chemist working on machine learning for
+              materials discovery and electrochemical energy storage.</p>
+          </div>
+        </div>
+
+        <div class="section-head mt-16">
+          <h2>Related articles</h2>
+        </div>
+        <div class="grid grid-3">
+          <article class="card card-hover">
+            <div class="blog-thumb"><svg aria-hidden="true">
+                <use href="#icon-terminal"></use>
+              </svg><span class="badge badge-cs">Computer Science</span></div>
+            <h3 class="card-title mt-4">Why Chemists Should Learn to Code</h3>
+            <a href="blog-single.html" class="link-arrow mt-2">Read post <svg class="icon" aria-hidden="true">
+                <use href="#icon-arrow-right"></use>
+              </svg></a>
+          </article>
+          <article class="card card-hover">
+            <div class="blog-thumb"><svg aria-hidden="true">
+                <use href="#icon-database"></use>
+              </svg><span class="badge badge-cs">Computer Science</span></div>
+            <h3 class="card-title mt-4">Building a REST API for Lab Data with Zero Downtime</h3>
+            <a href="blog-single.html" class="link-arrow mt-2">Read post <svg class="icon" aria-hidden="true">
+                <use href="#icon-arrow-right"></use>
+              </svg></a>
+          </article>
+          <article class="card card-hover">
+            <div class="blog-thumb"><svg aria-hidden="true">
+                <use href="#icon-atom"></use>
+              </svg><span class="badge badge-chem">Chemistry</span></div>
+            <h3 class="card-title mt-4">Understanding Supercapacitor Electrode Kinetics</h3>
+            <a href="blog-single.html" class="link-arrow mt-2">Read post <svg class="icon" aria-hidden="true">
+                <use href="#icon-arrow-right"></use>
+              </svg></a>
+          </article>
+        </div>
+
+        <div class="newsletter-box mt-16" data-reveal>
+          <h3>Get new posts by email</h3>
+          <p>One email whenever I publish something new — no spam, unsubscribe anytime.</p>
+          <form class="newsletter-form" data-newsletter-form>
+            <label for="newsletter-email-2" class="visually-hidden">Email address</label>
+            <input type="email" id="newsletter-email-2" class="form-control" placeholder="you@example.com" required>
+            <button type="submit" class="btn btn-primary">Subscribe</button>
+          </form>
+          <p class="text-caption mt-4" data-newsletter-message hidden></p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  {% endblock %}

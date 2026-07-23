@@ -1,278 +1,165 @@
-{% extends "base.html" %}
+{% extends 'base.html' %}
 {% load static %}
-
 {% block content %}
-  <!-- ============================== HEADER ============================== -->
 
-
-    <!-- ============================== PAGE HEADER ============================== -->
-    <div class="container">
-      <div class="page-header">
-        <p class="eyebrow">About</p>
-        <h1 class="page-header__title">About</h1>
-        <p class="lead page-header__lead">A closer look at how I ended up working between chemistry and machine learning, and the principles that guide the research and software that comes out of it.</p>
-      </div>
-    </div>
-
-    <!-- ============================== BIOGRAPHY ============================== -->
-    <section class="section" aria-labelledby="bio-title">
+    <section class="section">
       <div class="container">
-        <div class="content-column">
-          <div class="section-header">
-            <p class="eyebrow">Biography</p>
-            <h2 id="bio-title" class="section-header__title">Biography</h2>
-          </div>
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <span class="sep">/</span>
+          <span class="current">About</span>
+        </nav>
 
-          <div class="stack">
-            <p>I didn't start out planning to work in machine learning. My background is in chemistry — specifically, the kind of physical organic chemistry that involves a lot of time in front of a fume hood, and even more time afterward trying to make sense of the data it produced. Somewhere in my second year of undergraduate research, I started writing small Python scripts to automate the tedious parts of that analysis, and the scripts kept getting more interesting than the experiments.</p>
-
-            <p>That interest turned into a PhD in computational chemistry, where I spent most of my time asking a fairly narrow question: can a model that understands molecular structure — not just a list of numerical descriptors — predict chemical behavior more reliably than the fingerprint-based methods most of the field still relies on? The graph neural network library that came out of that work, MolGraphNet, ended up being used well beyond my own thesis, which taught me almost as much about software engineering as the research itself did.</p>
-
-            <p>Today I split my time between research — mostly generative models and property prediction — and maintaining the open-source tools that research depends on. I care a lot about the second half of that sentence. A result that can't be reproduced by someone outside the original lab isn't really a scientific result yet, just a claim, and a fair amount of my day-to-day work is really about closing that gap.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ========================== RESEARCH PHILOSOPHY ========================== -->
-    <section class="section section--alt" aria-labelledby="philosophy-title">
-      <div class="container">
-        <p class="eyebrow eyebrow--purple">Research Philosophy</p>
-        <h2 id="philosophy-title" class="sr-only">Research Philosophy</h2>
-        <p class="statement">Chemistry doesn't need machine learning to be more mysterious. It needs machine learning to be more honest about what it doesn't know.</p>
-        <p class="lead">It's easy to build a model that fits a benchmark. It's much harder to build one that behaves reasonably when it's wrong — and in chemistry, being wrong has consequences a leaderboard doesn't capture. I try to treat uncertainty, reproducibility, and interpretability as first-class parts of the research, not as an afterthought added for the camera-ready version.</p>
-      </div>
-    </section>
-
-    <!-- ============================== EDUCATION ============================== -->
-    <section class="section" aria-labelledby="education-title">
-      <div class="container">
-        <div class="section-header">
-          <p class="eyebrow">Education</p>
-          <h2 id="education-title" class="section-header__title">Education</h2>
-        </div>
-
-        <div class="credential-list">
-          <div class="credential-item">
-            <p class="credential-item__years">2019 — 2023</p>
-            <div>
-              <p class="credential-item__degree">PhD, Computational Chemistry</p>
-              <p class="credential-item__institution">Bergström Institute of Technology</p>
-              <p class="credential-item__desc">Dissertation: "Machine Learning Methods for Predictive and Generative Molecular Modeling." Advised research on graph neural networks for property prediction and generative approaches to molecular design.</p>
+        <div class="grid grid-2 items-center mt-8">
+          <div data-reveal>
+            <p class="hero-eyebrow">About me</p>
+            <h1 class="page-title">Hi, I'm Kai — I split my time between the lab bench and the keyboard.</h1>
+            <p class="text-lg text-secondary mt-6">I'm a researcher and engineer working at the boundary of
+              electrochemistry and machine learning. My work ranges from fabricating battery electrodes to building the
+              software that analyzes their performance.</p>
+            <div class="hero-actions">
+              <a href="#" class="btn btn-primary">Download CV <svg class="icon" aria-hidden="true">
+                  <use href="#icon-download"></use>
+                </svg></a>
+              <a href="contact.html" class="btn btn-secondary">Get in touch</a>
+            </div>
+            <div class="social-row mt-6">
+              <a href="https://github.com/" aria-label="GitHub profile" target="_blank" rel="noopener"
+                class="btn-icon btn-secondary"><svg class="icon" aria-hidden="true">
+                  <use href="#icon-github"></use>
+                </svg></a>
+              <a href="https://linkedin.com/" aria-label="LinkedIn profile" target="_blank" rel="noopener"
+                class="btn-icon btn-secondary"><svg class="icon" aria-hidden="true">
+                  <use href="#icon-linkedin"></use>
+                </svg></a>
+              <a href="https://scholar.google.com/" aria-label="Google Scholar profile" target="_blank" rel="noopener"
+                class="btn-icon btn-secondary"><svg class="icon" aria-hidden="true">
+                  <use href="#icon-scholar"></use>
+                </svg></a>
+              <a href="https://orcid.org/" aria-label="ORCID profile" target="_blank" rel="noopener"
+                class="btn-icon btn-secondary"><svg class="icon" aria-hidden="true">
+                  <use href="#icon-orcid"></use>
+                </svg></a>
             </div>
           </div>
 
-          <div class="credential-item">
-            <p class="credential-item__years">2014 — 2017</p>
-            <div>
-              <p class="credential-item__degree">BSc, Chemistry — minor in Computer Science</p>
-              <p class="credential-item__institution">Solvik University</p>
-              <p class="credential-item__desc">Undergraduate thesis on cheminformatics descriptors for aqueous solubility prediction.</p>
+          <div class="profile-photo-wrap" data-reveal>
+            <div class="profile-photo">
+              <span>KR</span>
+            </div>
+            <div class="profile-badge">
+              <svg class="icon" aria-hidden="true">
+                <use href="#icon-check-circle"></use>
+              </svg>
+              Open to research collaborations
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- =============================== SKILLS =============================== -->
-    <section class="section section--alt" aria-labelledby="skills-title">
+    <section class="section section-bg">
       <div class="container">
-        <div class="section-header">
-          <p class="eyebrow">Technical Skills</p>
-          <h2 id="skills-title" class="section-header__title">Tools I work with</h2>
+        <div class="grid grid-3" data-reveal-group>
+          <div class="card text-center" data-reveal>
+            <span class="stat-value">5 yrs</span>
+            <p class="text-caption text-secondary mt-2">Combined lab and engineering experience</p>
+          </div>
+          <div class="card text-center" data-reveal>
+            <span class="stat-value">6</span>
+            <p class="text-caption text-secondary mt-2">Peer-reviewed publications</p>
+          </div>
+          <div class="card text-center" data-reveal>
+            <span class="stat-value">12+</span>
+            <p class="text-caption text-secondary mt-2">Shipped software &amp; research projects</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Education &amp; experience</h2>
+          <p class="text-secondary">The path from the bench to the backend.</p>
         </div>
 
-        <div class="skills-grid">
-          <div>
-            <h3 class="skill-group__title">Machine Learning</h3>
-            <div class="skill-group__list">
-              <span class="badge badge--neutral">Python</span>
-              <span class="badge badge--neutral">PyTorch</span>
-              <span class="badge badge--neutral">Graph Neural Networks</span>
-              <span class="badge badge--neutral">Generative Models</span>
-              <span class="badge badge--neutral">Scikit-learn</span>
-              <span class="badge badge--neutral">Uncertainty Quantification</span>
+        <ol class="timeline">
+          <li class="timeline-item">
+            <p class="timeline-date">2024 — Present</p>
+            <h3 class="card-title">Research Scientist, Applied Electrochemistry Lab</h3>
+            <p class="text-secondary mt-2">Leading a small team studying nickel-foam electrode fabrication for
+              supercapacitors, and building the internal tooling used to track experiments.</p>
+          </li>
+          <li class="timeline-item">
+            <p class="timeline-date">2022 — 2024</p>
+            <h3 class="card-title">Software Engineer, Research Computing</h3>
+            <p class="text-secondary mt-2">Built REST APIs and data pipelines used across three research groups, plus a
+              machine learning service for reaction-yield prediction.</p>
+          </li>
+          <li class="timeline-item">
+            <p class="timeline-date">2019 — 2022</p>
+            <h3 class="card-title">Ph.D., Physical Chemistry</h3>
+            <p class="text-secondary mt-2">Dissertation on electrode-electrolyte interfaces in supercapacitors, with a
+              side project that turned into my first production codebase.</p>
+          </li>
+          <li class="timeline-item">
+            <p class="timeline-date">2015 — 2019</p>
+            <h3 class="card-title">B.S., Chemistry &amp; Computer Science (double major)</h3>
+            <p class="text-secondary mt-2">Split coursework between organic/physical chemistry and systems programming —
+              the combination that set the direction for everything since.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section section-bg">
+      <div class="container">
+        <div class="section-head">
+          <h2>Skills &amp; tools</h2>
+          <p class="text-secondary">What I reach for, on both sides of the bench.</p>
+        </div>
+
+        <div class="grid grid-2">
+          <div class="card skill-group">
+            <h3>Computer science</h3>
+            <div class="skill-pills">
+              <span class="skill-pill">Python</span>
+              <span class="skill-pill">JavaScript</span>
+              <span class="skill-pill">REST APIs</span>
+              <span class="skill-pill">PostgreSQL</span>
+              <span class="skill-pill">Machine Learning</span>
+              <span class="skill-pill">PyTorch</span>
+              <span class="skill-pill">Docker</span>
+              <span class="skill-pill">Git</span>
+              <span class="skill-pill">Data Pipelines</span>
             </div>
           </div>
-
-          <div>
-            <h3 class="skill-group__title">Computational Chemistry</h3>
-            <div class="skill-group__list">
-              <span class="badge badge--neutral">RDKit</span>
-              <span class="badge badge--neutral">Molecular Dynamics</span>
-              <span class="badge badge--neutral">Cheminformatics</span>
-              <span class="badge badge--neutral">Quantum Chemistry Basics</span>
-              <span class="badge badge--neutral">OpenMM</span>
-              <span class="badge badge--neutral">PySCF</span>
-            </div>
-          </div>
-
-          <div>
-            <h3 class="skill-group__title">Software Engineering</h3>
-            <div class="skill-group__list">
-              <span class="badge badge--neutral">Docker</span>
-              <span class="badge badge--neutral">CI/CD</span>
-              <span class="badge badge--neutral">Git</span>
-              <span class="badge badge--neutral">SQL</span>
-              <span class="badge badge--neutral">REST APIs</span>
-              <span class="badge badge--neutral">Linux</span>
+          <div class="card skill-group">
+            <h3>Chemistry &amp; materials</h3>
+            <div class="skill-pills">
+              <span class="skill-pill">Electrochemistry</span>
+              <span class="skill-pill">Battery Testing</span>
+              <span class="skill-pill">XRD</span>
+              <span class="skill-pill">SEM Imaging</span>
+              <span class="skill-pill">Nanomaterials</span>
+              <span class="skill-pill">Polymer Synthesis</span>
+              <span class="skill-pill">Surface Engineering</span>
+              <span class="skill-pill">Lab Safety &amp; SOPs</span>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ========================= RESEARCH INTERESTS ========================= -->
-    <section class="section" aria-labelledby="interests-title">
+    <section class="section">
       <div class="container">
-        <div class="section-header">
-          <p class="eyebrow eyebrow--green">Research Interests</p>
-          <h2 id="interests-title" class="section-header__title">What I'm currently exploring</h2>
-        </div>
-
-        <div class="interest-list">
-          <div class="interest-item">
-            <span class="interest-item__index">01</span>
-            <div>
-              <h3 class="interest-item__title">Machine Learning for Molecular Property Prediction</h3>
-              <p class="interest-item__desc">Predicting reactivity, solubility, and toxicity directly from molecular graphs.</p>
-            </div>
-          </div>
-          <div class="interest-item">
-            <span class="interest-item__index">02</span>
-            <div>
-              <h3 class="interest-item__title">Generative Models for Molecular &amp; Materials Design</h3>
-              <p class="interest-item__desc">Proposing novel, synthesizable candidates conditioned on target properties.</p>
-            </div>
-          </div>
-          <div class="interest-item">
-            <span class="interest-item__index">03</span>
-            <div>
-              <h3 class="interest-item__title">Graph Neural Networks Applied to Chemistry</h3>
-              <p class="interest-item__desc">Architectures that respect molecular symmetry and structure natively.</p>
-            </div>
-          </div>
-          <div class="interest-item">
-            <span class="interest-item__index">04</span>
-            <div>
-              <h3 class="interest-item__title">Reproducible &amp; Scalable Scientific Software</h3>
-              <p class="interest-item__desc">Infrastructure that keeps computational results auditable over time.</p>
-            </div>
-          </div>
-          <div class="interest-item">
-            <span class="interest-item__index">05</span>
-            <div>
-              <h3 class="interest-item__title">Uncertainty Quantification in Predictive Chemistry</h3>
-              <p class="interest-item__desc">Knowing when a model's prediction should — and shouldn't — be trusted.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================== PUBLICATIONS ============================== -->
-    <section id="publications" class="section section--alt" aria-labelledby="publications-title">
-      <div class="container">
-        <div class="section-header">
-          <p class="eyebrow">Publications</p>
-          <h2 id="publications-title" class="section-header__title">Selected Publications</h2>
-        </div>
-
-        <div class="publication-list">
-          <article class="publication-item">
-            <p class="publication-item__year">2025</p>
-            <div>
-              <h3 class="publication-item__title">Graph Neural Networks for Predicting Reaction Yields in Multi-Step Synthesis</h3>
-              <p class="publication-item__meta">K. Rostami, A. Lindqvist, M. Chen — <span class="publication-item__venue">Journal of Computational Molecular Science</span>, 2025</p>
-              <div class="badge-row badge-row--pub">
-                <span class="badge badge--purple">Machine Learning</span>
-                <span class="badge badge--green">Chemistry</span>
-              </div>
-              <div class="publication-item__footer">
-                <a class="publication-item__link" href="#">PDF</a>
-                <a class="publication-item__link" href="#">DOI</a>
-              </div>
-            </div>
-          </article>
-
-          <article class="publication-item">
-            <p class="publication-item__year">2024</p>
-            <div>
-              <h3 class="publication-item__title">ChemPipe: A Reproducible Workflow Framework for High-Throughput Computational Chemistry</h3>
-              <p class="publication-item__meta">K. Rostami — <span class="publication-item__venue">Journal of Research Software Engineering</span>, 2024</p>
-              <div class="badge-row badge-row--pub">
-                <span class="badge badge--blue">Software Engineering</span>
-                <span class="badge badge--green">Chemistry</span>
-              </div>
-              <div class="publication-item__footer">
-                <a class="publication-item__link" href="#">PDF</a>
-                <a class="publication-item__link" href="#">DOI</a>
-              </div>
-            </div>
-          </article>
-
-          <article class="publication-item">
-            <p class="publication-item__year">2023</p>
-            <div>
-              <h3 class="publication-item__title">Latent Space Optimization for Conditional Molecule Generation</h3>
-              <p class="publication-item__meta">K. Rostami, S. Farhadi, M. Chen — <span class="publication-item__venue">International Conference on Data-Driven Chemistry</span>, 2023</p>
-              <div class="badge-row badge-row--pub">
-                <span class="badge badge--purple">Machine Learning</span>
-                <span class="badge badge--green">Chemistry</span>
-              </div>
-              <div class="publication-item__footer">
-                <a class="publication-item__link" href="#">PDF</a>
-                <a class="publication-item__link" href="#">DOI</a>
-              </div>
-            </div>
-          </article>
-
-          <article class="publication-item">
-            <p class="publication-item__year">2023</p>
-            <div>
-              <h3 class="publication-item__title">Benchmarking Graph Neural Network Architectures for Molecular Property Prediction</h3>
-              <p class="publication-item__meta">K. Rostami — <span class="publication-item__venue">Journal of Computational Molecular Science</span>, 2023</p>
-              <div class="badge-row badge-row--pub">
-                <span class="badge badge--purple">Machine Learning</span>
-                <span class="badge badge--green">Chemistry</span>
-              </div>
-              <div class="publication-item__footer">
-                <a class="publication-item__link" href="#">PDF</a>
-                <a class="publication-item__link" href="#">DOI</a>
-              </div>
-            </div>
-          </article>
-
-          <article class="publication-item">
-            <p class="publication-item__year">2021</p>
-            <div>
-              <h3 class="publication-item__title">Graph Neural Networks for Reaction Yield Prediction: A Preliminary Study</h3>
-              <p class="publication-item__meta">K. Rostami, A. Lindqvist — <span class="publication-item__venue">Workshop on Machine Learning for Molecules and Materials (MoML)</span>, 2021</p>
-              <div class="badge-row badge-row--pub">
-                <span class="badge badge--purple">Machine Learning</span>
-                <span class="badge badge--green">Chemistry</span>
-              </div>
-              <div class="publication-item__footer">
-                <a class="publication-item__link" href="#">PDF</a>
-              </div>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================== CONTACT CTA (plain) ============================== -->
-    <section class="section" aria-labelledby="contact-cta-title">
-      <div class="container">
-        <div class="panel cta-block">
-          <div>
-            <p class="eyebrow eyebrow--green">Get in Touch</p>
-            <h2 id="contact-cta-title" class="cta-block__title">Want to know more, or just say hello?</h2>
-            <p class="cta-block__desc">I'm generally easy to reach — feel free to get in touch about research, collaboration, or anything adjacent.</p>
-          </div>
-
-          <div class="cta-block__actions">
-            <a href="contact.html" class="btn btn--primary">Contact Me</a>
+        <div class="card card-elevated text-center" data-reveal>
+          <h2>Curious how these two fields actually connect?</h2>
+          <p class="text-secondary text-lg mt-4">Take a look at the projects where code and chemistry meet directly.</p>
+          <div class="hero-actions justify-center">
+            <a href="projects.html" class="btn btn-primary">Browse projects</a>
+            <a href="research.html" class="btn btn-secondary">View research</a>
           </div>
         </div>
       </div>
@@ -280,5 +167,4 @@
 
   </main>
 
-  <!-- ============================== FOOTER ============================== -->
   {% endblock %}

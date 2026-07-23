@@ -5,6 +5,6 @@ app_name = 'project'
 
 urlpatterns = [
     path('', project_view, name='project_index'),
-    path('single', project_single, name='project_single'),
+    path('project-single/', project_single, name='project_single'),
     
 ]

@@ -10,6 +10,9 @@ def about_view(request):
 def contact_view(request):
     return render(request, 'website/contact.html')
 
+def research_view(request):
+    return render(request, 'website/research.html')
+
 def test_view(request):
     context = {
         'message': 'This is a test view.',

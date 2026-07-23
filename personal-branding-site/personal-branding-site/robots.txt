@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /login.html
+Disallow: /register.html
+Disallow: /forgot-password.html
+
+Sitemap: https://www.kairutherford.dev/sitemap.xml

@@ -1,0 +1,115 @@
+/* ==========================================================================
+   Design Tokens
+   Source of truth for the visual system. Every other stylesheet should
+   reference these custom properties rather than hard-coded values.
+   ========================================================================== */
+
+:root {
+
+  /* ---- Color: Primary --------------------------------------------------- */
+  --color-primary: #3556FA;
+  --color-primary-dark: #2563EB;
+  --color-primary-active: #1D4ED8;
+
+  /* ---- Color: Accent / Neutral foreground -------------------------------- */
+  --color-slate: #6B7280;      /* secondary text */
+  --color-charcoal: #111827;   /* primary text / headings */
+  --color-gray-600: #374151;   /* tertiary button text, label emphasis */
+  --color-gray-400: #9CA3AF;   /* placeholders, disabled text */
+  --color-dark-slate: #4B5563; /* modal/elevated surface depth */
+
+  /* ---- Color: Neutral surface scale --------------------------------------- */
+  --color-white: #FFFFFF;
+  --color-off-white: #F9FAFB;
+  --color-light-gray: #F3F4F6;
+  --color-border: #E5E7EB;
+  --color-border-strong: #D1D5DB;
+  --color-black: #000000;
+
+  /* ---- Color: Semantic ---------------------------------------------------- */
+  --color-warning: #FACC15;
+  --color-warning-bg: #FFFACD;
+  --color-warning-text: #B45309;
+  --color-success-bg: #F0FDF4;
+  --color-info-bg: #EFF6FF;
+  --color-badge-text: #0369A1;
+  --color-error: #EF4444;
+  --color-error-dark: #DC2626;
+  --color-error-bg: #FEF2F2;
+
+  /* ---- Typography: families ------------------------------------------------ */
+  /* NOTE: brief specified "Twemoji Country Flags" as the primary UI face.
+     That is a color-emoji flag font with no Latin glyphs, so it has been
+     substituted with Plus Jakarta Sans, a geometric sans with the same
+     bold/confident character. Baloo 2 is kept exactly as specified for the
+     logo and prominent brand links. */
+  --font-primary: 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-secondary: 'Baloo 2', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', 'SFMono-Regular', Consolas, monospace;
+
+  /* ---- Typography: scale ---------------------------------------------------- */
+  --text-display: 60px;   /* H1 */
+  --text-h2: 36px;
+  --text-h3: 30px;
+  --text-body-lg: 20px;
+  --text-body: 16px;
+  --text-link-primary: 36px;
+  --text-caption: 14px;
+  --text-code: 13px;
+
+  --leading-display: 60px;
+  --leading-h2: 40px;
+  --leading-h3: 36px;
+  --leading-body-lg: 28px;
+  --leading-body: 24px;
+  --leading-caption: 20px;
+  --leading-code: 20px;
+
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-extrabold: 800;
+
+  /* ---- Spacing scale (4px base unit) ------------------------------------- */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-7: 28px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-14: 56px;
+  --space-16: 64px;
+
+  /* ---- Radius scale -------------------------------------------------------- */
+  --radius-none: 0px;
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-xl: 12px;
+  --radius-2xl: 16px;
+  --radius-full: 999px;
+
+  /* ---- Elevation ------------------------------------------------------------ */
+  --shadow-sm: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0px 1px 3px 0px rgba(0, 0, 0, 0.1), 0px 1px 2px -1px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0px 20px 25px -5px rgba(0, 0, 0, 0.1), 0px 8px 10px -6px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0px 10px 15px -3px rgba(0, 0, 0, 0.1), 0px 4px 6px -4px rgba(0, 0, 0, 0.1);
+  --shadow-focus-ring: 0px 0px 0px 3px rgba(53, 86, 250, 0.1);
+
+  /* ---- Layout ---------------------------------------------------------------- */
+  --container-max: 1200px;
+  --page-padding-mobile: 20px;
+  --page-padding-tablet: 40px;
+  --page-padding-desktop: 56px;
+  --page-padding-large: 64px;
+
+  /* ---- Motion ----------------------------------------------------------------- */
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  --duration-fast: 150ms;
+  --duration-base: 250ms;
+  --duration-slow: 500ms;
+}

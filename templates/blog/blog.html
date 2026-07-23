@@ -1,91 +1,233 @@
-{% extends "base.html" %}
+{% extends 'base.html' %}
 {% load static %}
-
 {% block content %}
-    <!-- ============================== PAGE HEADER ============================== -->
 
-    <div class="container">
-      <div class="page-header">
-        <p class="eyebrow">Blog</p>
-        <h1 class="page-header__title">Blog</h1>
-        <p class="lead page-header__lead">Notes on machine learning, computational chemistry, and the research software engineering that connects them.</p>
-      </div>
-    </div>
-
-    <section class="section" aria-labelledby="articles-title">
+    <section class="section">
       <div class="container">
-        <h2 id="articles-title" class="sr-only">All Articles</h2>
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <span class="sep">/</span>
+          <span class="current">Blog</span>
+        </nav>
 
-        <div class="filter-bar" data-filter-bar role="group" aria-label="Filter articles by category">
-          <button type="button" class="filter-btn" data-filter="all" aria-pressed="true">All</button>
-          <button type="button" class="filter-btn" data-filter="ml" aria-pressed="false">Machine Learning</button>
-          <button type="button" class="filter-btn" data-filter="software" aria-pressed="false">Software Engineering</button>
-          <button type="button" class="filter-btn" data-filter="chem" aria-pressed="false">Chemistry</button>
+        <div class="section-head mt-8">
+          <h1 class="page-title">Blog</h1>
+          <p class="text-lg text-secondary mt-4 max-w-md">Notes on research, code, and the messy space where they
+            overlap.</p>
         </div>
 
-        <div class="grid grid--3">
-          <div class="project-grid-item" data-tags="ml chem">
-            <article class="card">
-              <div class="article-card__meta">
-                <span>May 2026</span><span aria-hidden="true">·</span><span>9 min read</span>
-              </div>
-              <span class="badge badge--purple badge--card-tag">Machine Learning</span>
-              <h3 class="article-card__title">A Practical Introduction to Graph Neural Networks for Chemists</h3>
-              <p class="article-card__excerpt">Graph neural networks are a natural fit for molecules, but the jump from tabular ML to graph-structured data trips up a lot of chemists. Here's the intuition, without skipping the math.</p>
-              <div class="card__footer">
-                <a href="blog/gnn-intro-for-chemists.html" class="card__link">Read article
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-                </a>
-              </div>
-            </article>
+        <article class="card card-elevated blog-featured" data-reveal>
+          <div class="blog-thumb">
+            <svg aria-hidden="true">
+              <use href="#icon-cpu"></use>
+            </svg>
+            <span class="badge badge-cs">Machine Learning</span>
           </div>
-
-          <div class="project-grid-item" data-tags="software chem">
-            <article class="card">
-              <div class="article-card__meta">
-                <span>Mar 2026</span><span aria-hidden="true">·</span><span>7 min read</span>
-              </div>
-              <span class="badge badge--blue badge--card-tag">Software Engineering</span>
-              <h3 class="article-card__title">Notes on Reproducibility in Computational Chemistry Pipelines</h3>
-              <p class="article-card__excerpt">Most computational chemistry results can't be rerun two years later. Here's what breaks, and the small set of practices that actually fix it.</p>
-              <div class="card__footer">
-                <a href="blog/reproducibility-in-comp-chem.html" class="card__link">Read article
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-                </a>
-              </div>
-            </article>
-          </div>
-
-          <div class="project-grid-item" data-tags="ml chem">
-            <article class="card">
-              <div class="article-card__meta">
-                <span>Jan 2026</span><span aria-hidden="true">·</span><span>6 min read</span>
-              </div>
-              <span class="badge badge--green badge--card-tag">Chemistry</span>
-              <h3 class="article-card__title">Why Most Molecular Property Predictors Fail to Generalize</h3>
-              <p class="article-card__excerpt">A model that performs well on a benchmark split often collapses on genuinely novel scaffolds. The culprit is usually distribution shift, not model capacity.</p>
-              <div class="card__footer">
-                <a href="blog/property-predictors-generalization.html" class="card__link">Read article
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-                </a>
-              </div>
-            </article>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section--alt" aria-labelledby="contact-cta-title">
-      <div class="container">
-        <div class="panel cta-block">
           <div>
-            <p class="eyebrow eyebrow--green">Get in Touch</p>
-            <h2 id="contact-cta-title" class="cta-block__title">Have a question about something I've written?</h2>
-            <p class="cta-block__desc">I'm always glad to hear feedback, corrections, or follow-up questions on any of these.</p>
+            <p class="text-caption text-secondary">Featured</p>
+            <h2 class="featured-title mt-2">From Jupyter to Production: Deploying ML for Materials Science</h2>
+            <p class="text-secondary mt-4">The gap between a working notebook and a service your lab actually relies on
+              is bigger than it looks. Here's how I closed it for the Neural Reaction Predictor.</p>
+            <div class="blog-card-meta mt-4">
+              <div class="avatar"><svg class="icon avatar-icon" aria-hidden="true">
+                  <use href="#icon-user"></use>
+                </svg></div>
+              <span>Kai Rutherford</span><span>·</span><span>Jun 2, 2026</span><span>·</span><span>8 min read</span>
+            </div>
+            <a href="blog-single.html" class="btn btn-primary mt-4">Read the full post <svg class="icon"
+                aria-hidden="true">
+                <use href="#icon-arrow-right"></use>
+              </svg></a>
           </div>
-          <div class="cta-block__actions">
-            <a href="contact.html" class="btn btn--primary">Contact Me</a>
+        </article>
+
+        <div class="layout-with-sidebar mt-16">
+          <div>
+            <div class="filter-bar">
+              <div class="tabs" role="tablist" aria-label="Filter posts by category" data-tabs
+                data-tabs-scope="#blog-grid">
+                <button class="tab-item" role="tab" aria-selected="true" data-filter="all">All</button>
+                <button class="tab-item" role="tab" aria-selected="false" data-filter="cs">Computer Science</button>
+                <button class="tab-item" role="tab" aria-selected="false" data-filter="chem">Chemistry</button>
+              </div>
+              <div class="search-field input-with-icon">
+                <svg class="icon" aria-hidden="true">
+                  <use href="#icon-search"></use>
+                </svg>
+                <label for="blog-search" class="visually-hidden">Search posts</label>
+                <input type="search" id="blog-search" class="form-control" placeholder="Search posts…">
+              </div>
+            </div>
+
+            <div class="grid grid-2" id="blog-grid" data-reveal-group>
+              <article class="card card-hover" data-reveal data-category="cs">
+                <div class="blog-thumb"><svg aria-hidden="true">
+                    <use href="#icon-terminal"></use>
+                  </svg><span class="badge badge-cs">Computer Science</span></div>
+                <h3 class="card-title mt-4">Why Chemists Should Learn to Code</h3>
+                <div class="blog-card-meta">
+                  <span>Kai Rutherford</span><span>·</span><span>6 min read</span>
+                </div>
+                <a href="blog-single.html" class="link-arrow">Read post <svg class="icon" aria-hidden="true">
+                    <use href="#icon-arrow-right"></use>
+                  </svg></a>
+              </article>
+
+              <article class="card card-hover" data-reveal data-category="chem">
+                <div class="blog-thumb"><svg aria-hidden="true">
+                    <use href="#icon-atom"></use>
+                  </svg><span class="badge badge-chem">Chemistry</span></div>
+                <h3 class="card-title mt-4">Understanding Supercapacitor Electrode Kinetics</h3>
+                <div class="blog-card-meta">
+                  <span>Kai Rutherford</span><span>·</span><span>9 min read</span>
+                </div>
+                <a href="blog-single.html" class="link-arrow">Read post <svg class="icon" aria-hidden="true">
+                    <use href="#icon-arrow-right"></use>
+                  </svg></a>
+              </article>
+
+              <article class="card card-hover" data-reveal data-category="chem">
+                <div class="blog-thumb"><svg aria-hidden="true">
+                    <use href="#icon-flask"></use>
+                  </svg><span class="badge badge-chem">Chemistry</span></div>
+                <h3 class="card-title mt-4">A Beginner's Guide to Nickel Foam Fabrication</h3>
+                <div class="blog-card-meta">
+                  <span>Kai Rutherford</span><span>·</span><span>7 min read</span>
+                </div>
+                <a href="blog-single.html" class="link-arrow">Read post <svg class="icon" aria-hidden="true">
+                    <use href="#icon-arrow-right"></use>
+                  </svg></a>
+              </article>
+
+              <article class="card card-hover" data-reveal data-category="cs">
+                <div class="blog-thumb"><svg aria-hidden="true">
+                    <use href="#icon-code"></use>
+                  </svg><span class="badge badge-cs">Computer Science</span></div>
+                <h3 class="card-title mt-4">Automating Literature Reviews with Python</h3>
+                <div class="blog-card-meta">
+                  <span>Kai Rutherford</span><span>·</span><span>5 min read</span>
+                </div>
+                <a href="blog-single.html" class="link-arrow">Read post <svg class="icon" aria-hidden="true">
+                    <use href="#icon-arrow-right"></use>
+                  </svg></a>
+              </article>
+
+              <article class="card card-hover" data-reveal data-category="cs">
+                <div class="blog-thumb"><svg aria-hidden="true">
+                    <use href="#icon-database"></use>
+                  </svg><span class="badge badge-cs">Computer Science</span></div>
+                <h3 class="card-title mt-4">Building a REST API for Lab Data with Zero Downtime</h3>
+                <div class="blog-card-meta">
+                  <span>Kai Rutherford</span><span>·</span><span>8 min read</span>
+                </div>
+                <a href="blog-single.html" class="link-arrow">Read post <svg class="icon" aria-hidden="true">
+                    <use href="#icon-arrow-right"></use>
+                  </svg></a>
+              </article>
+
+              <article class="card card-hover" data-reveal data-category="chem">
+                <div class="blog-thumb"><svg aria-hidden="true">
+                    <use href="#icon-droplet"></use>
+                  </svg><span class="badge badge-chem">Chemistry</span></div>
+                <h3 class="card-title mt-4">Notes on Rare Earth Recovery from E-Waste</h3>
+                <div class="blog-card-meta">
+                  <span>Kai Rutherford</span><span>·</span><span>10 min read</span>
+                </div>
+                <a href="blog-single.html" class="link-arrow">Read post <svg class="icon" aria-hidden="true">
+                    <use href="#icon-arrow-right"></use>
+                  </svg></a>
+              </article>
+            </div>
+
+            <nav class="pagination" aria-label="Blog pagination">
+              <a href="#" aria-label="Previous page"><svg class="icon" aria-hidden="true">
+                  <use href="#icon-arrow-left"></use>
+                </svg></a>
+              <a href="#" aria-current="page">1</a>
+              <a href="#">2</a>
+              <a href="#" aria-label="Next page"><svg class="icon" aria-hidden="true">
+                  <use href="#icon-arrow-right"></use>
+                </svg></a>
+            </nav>
           </div>
+
+          <aside class="flex flex-col gap-6">
+            <div class="card">
+              <h3 class="card-title">Popular posts</h3>
+              <div class="flex flex-col gap-4 mt-4">
+                <a href="blog-single.html" class="flex items-center gap-3">
+                  <div class="avatar"><svg class="icon avatar-icon" aria-hidden="true">
+                      <use href="#icon-cpu"></use>
+                    </svg></div>
+                  <div>
+                    <p class="text-strong text-caption">From Jupyter to Production</p>
+                    <p class="text-caption text-secondary">8 min read</p>
+                  </div>
+                </a>
+                <a href="blog-single.html" class="flex items-center gap-3">
+                  <div class="avatar"><svg class="icon avatar-icon" aria-hidden="true">
+                      <use href="#icon-atom"></use>
+                    </svg></div>
+                  <div>
+                    <p class="text-strong text-caption">Supercapacitor Electrode Kinetics</p>
+                    <p class="text-caption text-secondary">9 min read</p>
+                  </div>
+                </a>
+                <a href="blog-single.html" class="flex items-center gap-3">
+                  <div class="avatar"><svg class="icon avatar-icon" aria-hidden="true">
+                      <use href="#icon-terminal"></use>
+                    </svg></div>
+                  <div>
+                    <p class="text-strong text-caption">Why Chemists Should Learn to Code</p>
+                    <p class="text-caption text-secondary">6 min read</p>
+                  </div>
+                </a>
+              </div>
+            </div>
+
+            <div class="card">
+              <h3 class="card-title">Categories</h3>
+              <div class="flex flex-col gap-2 mt-4">
+                <a href="blog.html#computer-science" class="flex justify-between">
+                  <span class="text-caption">Computer Science</span>
+                  <span class="text-caption text-secondary">4</span>
+                </a>
+                <a href="blog.html#chemistry" class="flex justify-between">
+                  <span class="text-caption">Chemistry</span>
+                  <span class="text-caption text-secondary">3</span>
+                </a>
+                <a href="blog.html#career" class="flex justify-between">
+                  <span class="text-caption">Career &amp; Notes</span>
+                  <span class="text-caption text-secondary">2</span>
+                </a>
+              </div>
+            </div>
+
+            <div class="card">
+              <h3 class="card-title">Tags</h3>
+              <div class="discipline-tags mt-4">
+                <span class="skill-pill">python</span>
+                <span class="skill-pill">machine-learning</span>
+                <span class="skill-pill">apis</span>
+                <span class="skill-pill">electrochemistry</span>
+                <span class="skill-pill">batteries</span>
+                <span class="skill-pill">automation</span>
+                <span class="skill-pill">materials-science</span>
+                <span class="skill-pill">career</span>
+              </div>
+            </div>
+          </aside>
+        </div>
+
+        <div class="newsletter-box mt-16" data-reveal>
+          <h3>Get new posts by email</h3>
+          <p>One email whenever I publish something new — no spam, unsubscribe anytime.</p>
+          <form class="newsletter-form" data-newsletter-form>
+            <label for="newsletter-email" class="visually-hidden">Email address</label>
+            <input type="email" id="newsletter-email" class="form-control" placeholder="you@example.com" required>
+            <button type="submit" class="btn btn-primary">Subscribe</button>
+          </form>
+          <p class="text-caption mt-4" data-newsletter-message hidden></p>
         </div>
       </div>
     </section>

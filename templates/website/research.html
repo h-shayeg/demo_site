@@ -1,0 +1,200 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+    <section class="section">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <span class="sep">/</span>
+          <span class="current">Research</span>
+        </nav>
+
+        <div class="section-head mt-8">
+          <h1 class="page-title">Research</h1>
+          <p class="text-lg text-secondary mt-4 max-w-md">Four active research threads, each sitting somewhere between a
+            lab bench and a training run.</p>
+        </div>
+
+        <div class="grid grid-2" data-reveal-group>
+          <div class="card" data-reveal>
+            <div class="research-card">
+              <div class="icon-tile"><svg aria-hidden="true">
+                  <use href="#icon-layers"></use>
+                </svg></div>
+              <div>
+                <h2 class="card-title">Machine Learning for Materials Discovery</h2>
+                <p class="text-secondary text-caption mt-2">Surrogate models that shortlist promising battery
+                  electrolytes before they're synthesized, trained on a growing internal reaction dataset.</p>
+              </div>
+            </div>
+            <div class="research-progress">
+              <progress class="progress-bar" value="70" max="100" aria-label="Progress: 70%"></progress>
+              <div class="flex justify-between mt-2">
+                <p class="text-caption text-secondary">Phase 2 of 3</p>
+                <p class="text-caption text-secondary">70%</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="card" data-reveal>
+            <div class="research-card">
+              <div class="icon-tile"><svg aria-hidden="true">
+                  <use href="#icon-battery"></use>
+                </svg></div>
+              <div>
+                <h2 class="card-title">Electrochemical Energy Storage</h2>
+                <p class="text-secondary text-caption mt-2">Improving cycle stability of nickel-foam-based
+                  supercapacitor electrodes and characterizing degradation modes.</p>
+              </div>
+            </div>
+            <div class="research-progress">
+              <progress class="progress-bar" value="45" max="100" aria-label="Progress: 45%"></progress>
+              <div class="flex justify-between mt-2">
+                <p class="text-caption text-secondary">Phase 1 of 2</p>
+                <p class="text-caption text-secondary">45%</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="card" data-reveal>
+            <div class="research-card">
+              <div class="icon-tile"><svg aria-hidden="true">
+                  <use href="#icon-cpu"></use>
+                </svg></div>
+              <div>
+                <h2 class="card-title">Scientific Computing Infrastructure</h2>
+                <p class="text-secondary text-caption mt-2">A shared simulation and data pipeline used across three
+                  research groups to standardize how experiments are logged and modeled.</p>
+              </div>
+            </div>
+            <div class="research-progress">
+              <progress class="progress-bar" value="90" max="100" aria-label="Progress: 90%"></progress>
+              <div class="flex justify-between mt-2">
+                <p class="text-caption text-secondary">Phase 3 of 3</p>
+                <p class="text-caption text-secondary">90%</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="card" data-reveal>
+            <div class="research-card">
+              <div class="icon-tile"><svg aria-hidden="true">
+                  <use href="#icon-droplet"></use>
+                </svg></div>
+              <div>
+                <h2 class="card-title">Sustainable Metal Recovery</h2>
+                <p class="text-secondary text-caption mt-2">Low-impact extraction routes for recovering rare earth and
+                  transition metals from electronic waste streams.</p>
+              </div>
+            </div>
+            <div class="research-progress">
+              <progress class="progress-bar" value="30" max="100" aria-label="Progress: 30%"></progress>
+              <div class="flex justify-between mt-2">
+                <p class="text-caption text-secondary">Phase 1 of 3</p>
+                <p class="text-caption text-secondary">30%</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-bg">
+      <div class="container">
+        <div class="section-head center">
+          <h2>How a research thread moves forward</h2>
+          <p class="text-secondary text-lg">The same loop, whether the "experiment" runs in a flask or a training
+            script.</p>
+        </div>
+
+        <div class="grid grid-4" data-reveal-group>
+          <div class="card text-center" data-reveal>
+            <div class="icon-tile centered"><svg aria-hidden="true">
+                <use href="#icon-flask"></use>
+              </svg></div>
+            <h3 class="card-title mt-4">Hypothesize</h3>
+            <p class="text-caption text-secondary mt-2">Start from a specific, testable question grounded in prior data.
+            </p>
+          </div>
+          <div class="card text-center" data-reveal>
+            <div class="icon-tile centered"><svg aria-hidden="true">
+                <use href="#icon-terminal"></use>
+              </svg></div>
+            <h3 class="card-title mt-4">Experiment</h3>
+            <p class="text-caption text-secondary mt-2">Run the lab experiment or training job, and log everything.</p>
+          </div>
+          <div class="card text-center" data-reveal>
+            <div class="icon-tile centered"><svg aria-hidden="true">
+                <use href="#icon-database"></use>
+              </svg></div>
+            <h3 class="card-title mt-4">Analyze</h3>
+            <p class="text-caption text-secondary mt-2">Pull results into a shared pipeline for comparison across runs.
+            </p>
+          </div>
+          <div class="card text-center" data-reveal>
+            <div class="icon-tile centered"><svg aria-hidden="true">
+                <use href="#icon-git-branch"></use>
+              </svg></div>
+            <h3 class="card-title mt-4">Iterate</h3>
+            <p class="text-caption text-secondary mt-2">Refine the hypothesis and go again, faster each time.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Collaborators &amp; affiliations</h2>
+          <p class="text-secondary">Research doesn't happen alone — these are the groups I work with most.</p>
+        </div>
+        <div class="grid grid-3">
+          <div class="card flex items-center gap-4">
+            <div class="avatar"><svg class="icon avatar-icon" aria-hidden="true">
+                <use href="#icon-flask"></use>
+              </svg></div>
+            <div>
+              <p class="text-strong">Applied Electrochemistry Lab</p>
+              <p class="text-caption text-secondary">Host lab, battery &amp; supercapacitor research</p>
+            </div>
+          </div>
+          <div class="card flex items-center gap-4">
+            <div class="avatar"><svg class="icon avatar-icon" aria-hidden="true">
+                <use href="#icon-cpu"></use>
+              </svg></div>
+            <div>
+              <p class="text-strong">Research Computing Group</p>
+              <p class="text-caption text-secondary">Shared infrastructure &amp; ML tooling</p>
+            </div>
+          </div>
+          <div class="card flex items-center gap-4">
+            <div class="avatar"><svg class="icon avatar-icon" aria-hidden="true">
+                <use href="#icon-droplet"></use>
+              </svg></div>
+            <div>
+              <p class="text-strong">Sustainable Materials Initiative</p>
+              <p class="text-caption text-secondary">Cross-institution metal recovery consortium</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-bg">
+      <div class="container">
+        <div class="card card-elevated text-center" data-reveal>
+          <h2>Want the published version of this work?</h2>
+          <p class="text-secondary text-lg mt-4">Journal articles and conference papers tied to these research threads
+            live on the publications page.</p>
+          <div class="hero-actions justify-center">
+            <a href="publications.html" class="btn btn-primary">View publications</a>
+            <a href="contact.html" class="btn btn-secondary">Propose a collaboration</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  {% endblock %}
